@@ -1,0 +1,1741 @@
+2015-12-02 12:53:56 [scrapy] INFO: Scrapy 1.0.3 started (bot: amazon)
+2015-12-02 12:53:56 [scrapy] INFO: Optional features available: ssl, http11
+2015-12-02 12:53:56 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'amazon.spiders', 'FEED_URI': 'review.xml', 'SPIDER_MODULES': ['amazon.spiders'], 'BOT_NAME': 'amazon', 'LOG_STDOUT': True, 'USER_AGENT': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/536.5 (KHTML, like Gecko) Chrome/19.0.1084.54 Safari/536.5', 'FEED_FORMAT': 'xml', 'LOG_FILE': 'review.log'}
+2015-12-02 12:53:56 [scrapy] INFO: Enabled extensions: CloseSpider, FeedExporter, TelnetConsole, LogStats, CoreStats, SpiderState
+2015-12-02 12:53:56 [scrapy] INFO: Enabled downloader middlewares: HttpAuthMiddleware, DownloadTimeoutMiddleware, UserAgentMiddleware, RetryMiddleware, DefaultHeadersMiddleware, MetaRefreshMiddleware, HttpCompressionMiddleware, RedirectMiddleware, CookiesMiddleware, ChunkedTransferMiddleware, DownloaderStats
+2015-12-02 12:53:56 [scrapy] INFO: Enabled spider middlewares: HttpErrorMiddleware, OffsiteMiddleware, RefererMiddleware, UrlLengthMiddleware, DepthMiddleware
+2015-12-02 12:53:56 [scrapy] INFO: Enabled item pipelines: EmptyItemPipeline, JsonWriterPipeline
+2015-12-02 12:53:56 [scrapy] INFO: Spider opened
+2015-12-02 12:53:56 [scrapy] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2015-12-02 12:53:56 [scrapy] DEBUG: Telnet console listening on 127.0.0.1:6023
+2015-12-02 12:53:58 [scrapy] DEBUG: Crawled (200) <GET http://www.amazon.com/s/ref=sr_pg_1?rh=n%3A7141123011%2Cn%3A7147441011%2Cn%3A1040658%2Cn%3A2476517011%2Cn%3A1045624%2Cp_6%3AATVPDKIKX0DER&page=1&bbn=2476517011&ie=UTF8&qid=1448965490> (referer: None)
+2015-12-02 12:54:00 [scrapy] DEBUG: Crawled (200) <GET http://www.amazon.com/Champion-Jersey-T-Shirt-Black-X-Large/dp/B0010EG81U/ref=sr_1_34/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-34&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER> (referer: http://www.amazon.com/s/ref=sr_pg_1?rh=n%3A7141123011%2Cn%3A7147441011%2Cn%3A1040658%2Cn%3A2476517011%2Cn%3A1045624%2Cp_6%3AATVPDKIKX0DER&page=1&bbn=2476517011&ie=UTF8&qid=1448965490)
+2015-12-02 12:54:04 [scrapy] ERROR: Spider error processing <GET http://www.amazon.com/Champion-Jersey-T-Shirt-Black-X-Large/dp/B0010EG81U/ref=sr_1_34/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-34&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER> (referer: http://www.amazon.com/s/ref=sr_pg_1?rh=n%3A7141123011%2Cn%3A7147441011%2Cn%3A1040658%2Cn%3A2476517011%2Cn%3A1045624%2Cp_6%3AATVPDKIKX0DER&page=1&bbn=2476517011&ie=UTF8&qid=1448965490)
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/spidermiddlewares/offsite.py", line 28, in process_spider_output
+    for x in result:
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/spidermiddlewares/depth.py", line 54, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/home/tao/Documents/amazon/amazon/spiders/review_spider.py", line 39, in parse_item_page
+    this_review_url_sel = Selector(response.read())
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/selector/unified.py", line 80, in __init__
+    _root = LxmlDocument(response, self._parser)
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/selector/lxmldocument.py", line 24, in __new__
+    cache = cls.cache.setdefault(response, {})
+  File "/usr/lib/python2.7/weakref.py", line 369, in setdefault
+    return self.data.setdefault(ref(key, self._remove),default)
+TypeError: cannot create weak reference to 'str' object
+2015-12-02 12:54:04 [scrapy] DEBUG: Crawled (200) <GET http://www.amazon.com/Original-Penguin-Mens-Snorkel-Medium/dp/B014UWBL9W/ref=sr_1_38/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-38&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER> (referer: http://www.amazon.com/s/ref=sr_pg_1?rh=n%3A7141123011%2Cn%3A7147441011%2Cn%3A1040658%2Cn%3A2476517011%2Cn%3A1045624%2Cp_6%3AATVPDKIKX0DER&page=1&bbn=2476517011&ie=UTF8&qid=1448965490)
+2015-12-02 12:54:04 [scrapy] DEBUG: Crawled (200) <GET http://www.amazon.com/Champion-Mens-Sleeve-White-Medium/dp/B001B2JIHC/ref=sr_1_35/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-35&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER> (referer: http://www.amazon.com/s/ref=sr_pg_1?rh=n%3A7141123011%2Cn%3A7147441011%2Cn%3A1040658%2Cn%3A2476517011%2Cn%3A1045624%2Cp_6%3AATVPDKIKX0DER&page=1&bbn=2476517011&ie=UTF8&qid=1448965490)
+2015-12-02 12:54:04 [scrapy] DEBUG: Crawled (200) <GET http://www.amazon.com/Scotch-Soda-V-Neck-T-Shirt-X-Large/dp/B012YWWIX8/ref=sr_1_39/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-39&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER> (referer: http://www.amazon.com/s/ref=sr_pg_1?rh=n%3A7141123011%2Cn%3A7147441011%2Cn%3A1040658%2Cn%3A2476517011%2Cn%3A1045624%2Cp_6%3AATVPDKIKX0DER&page=1&bbn=2476517011&ie=UTF8&qid=1448965490)
+2015-12-02 12:54:04 [scrapy] DEBUG: Crawled (200) <GET http://www.amazon.com/Original-Penguin-Sleeve-Sapphire-Medium/dp/B0132BD0E6/ref=sr_1_37/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-37&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER> (referer: http://www.amazon.com/s/ref=sr_pg_1?rh=n%3A7141123011%2Cn%3A7147441011%2Cn%3A1040658%2Cn%3A2476517011%2Cn%3A1045624%2Cp_6%3AATVPDKIKX0DER&page=1&bbn=2476517011&ie=UTF8&qid=1448965490)
+2015-12-02 12:54:04 [scrapy] DEBUG: Crawled (200) <GET http://www.amazon.com/American-Apparel-Unisex-Jersey-T-Shirt/dp/B008P4EE8M/ref=sr_1_33/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-33&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER> (referer: http://www.amazon.com/s/ref=sr_pg_1?rh=n%3A7141123011%2Cn%3A7147441011%2Cn%3A1040658%2Cn%3A2476517011%2Cn%3A1045624%2Cp_6%3AATVPDKIKX0DER&page=1&bbn=2476517011&ie=UTF8&qid=1448965490)
+2015-12-02 12:54:04 [scrapy] DEBUG: Crawled (200) <GET http://www.amazon.com/Original-Penguin-Contrast-T-Shirt-Sapphire/dp/B0158Z575Y/ref=sr_1_36/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-36&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER> (referer: http://www.amazon.com/s/ref=sr_pg_1?rh=n%3A7141123011%2Cn%3A7147441011%2Cn%3A1040658%2Cn%3A2476517011%2Cn%3A1045624%2Cp_6%3AATVPDKIKX0DER&page=1&bbn=2476517011&ie=UTF8&qid=1448965490)
+2015-12-02 12:54:04 [scrapy] DEBUG: Crawled (200) <GET http://www.amazon.com/Calvin-Klein-Sleeve-Graphic-Heather/dp/B016OY9UQU/ref=sr_1_1/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-1&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER> (referer: http://www.amazon.com/s/ref=sr_pg_1?rh=n%3A7141123011%2Cn%3A7147441011%2Cn%3A1040658%2Cn%3A2476517011%2Cn%3A1045624%2Cp_6%3AATVPDKIKX0DER&page=1&bbn=2476517011&ie=UTF8&qid=1448965490)
+2015-12-02 12:54:04 [scrapy] DEBUG: Crawled (200) <GET http://www.amazon.com/Fruit-Loom-4-Pack-Pocket-T-Shirt/dp/B00817DW8Q/ref=sr_1_32/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-32&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER> (referer: http://www.amazon.com/s/ref=sr_pg_1?rh=n%3A7141123011%2Cn%3A7147441011%2Cn%3A1040658%2Cn%3A2476517011%2Cn%3A1045624%2Cp_6%3AATVPDKIKX0DER&page=1&bbn=2476517011&ie=UTF8&qid=1448965490)
+2015-12-02 12:54:04 [scrapy] DEBUG: Filtered duplicate request: <GET http://www.amazon.com/Original-Penguin-Mens-Snorkel-Medium/dp/B014UWBL9W/ref=sr_1_38/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-38&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER> - no more duplicates will be shown (see DUPEFILTER_DEBUG to show all duplicates)
+2015-12-02 12:54:05 [scrapy] ERROR: Spider error processing <GET http://www.amazon.com/Champion-Mens-Sleeve-White-Medium/dp/B001B2JIHC/ref=sr_1_35/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-35&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER> (referer: http://www.amazon.com/s/ref=sr_pg_1?rh=n%3A7141123011%2Cn%3A7147441011%2Cn%3A1040658%2Cn%3A2476517011%2Cn%3A1045624%2Cp_6%3AATVPDKIKX0DER&page=1&bbn=2476517011&ie=UTF8&qid=1448965490)
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/spidermiddlewares/offsite.py", line 28, in process_spider_output
+    for x in result:
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/spidermiddlewares/depth.py", line 54, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/home/tao/Documents/amazon/amazon/spiders/review_spider.py", line 38, in parse_item_page
+    response = urllib2.urlopen(this_review_url)
+  File "/usr/lib/python2.7/urllib2.py", line 126, in urlopen
+    return _opener.open(url, data, timeout)
+  File "/usr/lib/python2.7/urllib2.py", line 406, in open
+    response = meth(req, response)
+  File "/usr/lib/python2.7/urllib2.py", line 519, in http_response
+    'http', request, response, code, msg, hdrs)
+  File "/usr/lib/python2.7/urllib2.py", line 444, in error
+    return self._call_chain(*args)
+  File "/usr/lib/python2.7/urllib2.py", line 378, in _call_chain
+    result = func(*args)
+  File "/usr/lib/python2.7/urllib2.py", line 527, in http_error_default
+    raise HTTPError(req.get_full_url(), code, msg, hdrs, fp)
+HTTPError: HTTP Error 503: Service Unavailable
+2015-12-02 12:54:09 [scrapy] ERROR: Spider error processing <GET http://www.amazon.com/American-Apparel-Unisex-Jersey-T-Shirt/dp/B008P4EE8M/ref=sr_1_33/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-33&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER> (referer: http://www.amazon.com/s/ref=sr_pg_1?rh=n%3A7141123011%2Cn%3A7147441011%2Cn%3A1040658%2Cn%3A2476517011%2Cn%3A1045624%2Cp_6%3AATVPDKIKX0DER&page=1&bbn=2476517011&ie=UTF8&qid=1448965490)
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/spidermiddlewares/offsite.py", line 28, in process_spider_output
+    for x in result:
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/spidermiddlewares/depth.py", line 54, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/home/tao/Documents/amazon/amazon/spiders/review_spider.py", line 39, in parse_item_page
+    this_review_url_sel = Selector(response.read())
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/selector/unified.py", line 80, in __init__
+    _root = LxmlDocument(response, self._parser)
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/selector/lxmldocument.py", line 24, in __new__
+    cache = cls.cache.setdefault(response, {})
+  File "/usr/lib/python2.7/weakref.py", line 369, in setdefault
+    return self.data.setdefault(ref(key, self._remove),default)
+TypeError: cannot create weak reference to 'str' object
+2015-12-02 12:54:11 [scrapy] ERROR: Spider error processing <GET http://www.amazon.com/Calvin-Klein-Sleeve-Graphic-Heather/dp/B016OY9UQU/ref=sr_1_1/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-1&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER> (referer: http://www.amazon.com/s/ref=sr_pg_1?rh=n%3A7141123011%2Cn%3A7147441011%2Cn%3A1040658%2Cn%3A2476517011%2Cn%3A1045624%2Cp_6%3AATVPDKIKX0DER&page=1&bbn=2476517011&ie=UTF8&qid=1448965490)
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/spidermiddlewares/offsite.py", line 28, in process_spider_output
+    for x in result:
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/spidermiddlewares/depth.py", line 54, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/home/tao/Documents/amazon/amazon/spiders/review_spider.py", line 39, in parse_item_page
+    this_review_url_sel = Selector(response.read())
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/selector/unified.py", line 80, in __init__
+    _root = LxmlDocument(response, self._parser)
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/selector/lxmldocument.py", line 24, in __new__
+    cache = cls.cache.setdefault(response, {})
+  File "/usr/lib/python2.7/weakref.py", line 369, in setdefault
+    return self.data.setdefault(ref(key, self._remove),default)
+TypeError: cannot create weak reference to 'str' object
+2015-12-02 12:54:19 [scrapy] ERROR: Spider error processing <GET http://www.amazon.com/Fruit-Loom-4-Pack-Pocket-T-Shirt/dp/B00817DW8Q/ref=sr_1_32/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-32&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER> (referer: http://www.amazon.com/s/ref=sr_pg_1?rh=n%3A7141123011%2Cn%3A7147441011%2Cn%3A1040658%2Cn%3A2476517011%2Cn%3A1045624%2Cp_6%3AATVPDKIKX0DER&page=1&bbn=2476517011&ie=UTF8&qid=1448965490)
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/spidermiddlewares/offsite.py", line 28, in process_spider_output
+    for x in result:
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/spidermiddlewares/depth.py", line 54, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/home/tao/Documents/amazon/amazon/spiders/review_spider.py", line 39, in parse_item_page
+    this_review_url_sel = Selector(response.read())
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/selector/unified.py", line 80, in __init__
+    _root = LxmlDocument(response, self._parser)
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/selector/lxmldocument.py", line 24, in __new__
+    cache = cls.cache.setdefault(response, {})
+  File "/usr/lib/python2.7/weakref.py", line 369, in setdefault
+    return self.data.setdefault(ref(key, self._remove),default)
+TypeError: cannot create weak reference to 'str' object
+2015-12-02 12:54:19 [scrapy] DEBUG: Crawled (200) <GET http://www.amazon.com/Armani-Jeans-Mens-Feather-Large/dp/B012EJMXHM/ref=sr_1_48/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-48&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER> (referer: http://www.amazon.com/s/ref=sr_pg_1?rh=n%3A7141123011%2Cn%3A7147441011%2Cn%3A1040658%2Cn%3A2476517011%2Cn%3A1045624%2Cp_6%3AATVPDKIKX0DER&page=1&bbn=2476517011&ie=UTF8&qid=1448965490)
+2015-12-02 12:54:19 [scrapy] DEBUG: Crawled (200) <GET http://www.amazon.com/Original-Penguin-T-Shirt-Heather-X-Large/dp/B015MXLIQY/ref=sr_1_26/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-26&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER> (referer: http://www.amazon.com/s/ref=sr_pg_1?rh=n%3A7141123011%2Cn%3A7147441011%2Cn%3A1040658%2Cn%3A2476517011%2Cn%3A1045624%2Cp_6%3AATVPDKIKX0DER&page=1&bbn=2476517011&ie=UTF8&qid=1448965490)
+2015-12-02 12:54:19 [scrapy] DEBUG: Crawled (200) <GET http://www.amazon.com/HUF-Mens-Tones-Navy-Medium/dp/B015TCED0Q/ref=sr_1_30/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-30&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER> (referer: http://www.amazon.com/s/ref=sr_pg_1?rh=n%3A7141123011%2Cn%3A7147441011%2Cn%3A1040658%2Cn%3A2476517011%2Cn%3A1045624%2Cp_6%3AATVPDKIKX0DER&page=1&bbn=2476517011&ie=UTF8&qid=1448965490)
+2015-12-02 12:54:19 [scrapy] DEBUG: Crawled (200) <GET http://www.amazon.com/Carhartt-Workwear-T-Shirt-Original-4X-Large/dp/B002GHC1DY/ref=sr_1_28/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-28&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER> (referer: http://www.amazon.com/s/ref=sr_pg_1?rh=n%3A7141123011%2Cn%3A7147441011%2Cn%3A1040658%2Cn%3A2476517011%2Cn%3A1045624%2Cp_6%3AATVPDKIKX0DER&page=1&bbn=2476517011&ie=UTF8&qid=1448965490)
+2015-12-02 12:54:19 [scrapy] DEBUG: Crawled (200) <GET http://www.amazon.com/Fred-Perry-Breton-Stripe-T-Shirt/dp/B012X2WQ40/ref=sr_1_27/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-27&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER> (referer: http://www.amazon.com/s/ref=sr_pg_1?rh=n%3A7141123011%2Cn%3A7147441011%2Cn%3A1040658%2Cn%3A2476517011%2Cn%3A1045624%2Cp_6%3AATVPDKIKX0DER&page=1&bbn=2476517011&ie=UTF8&qid=1448965490)
+2015-12-02 12:54:19 [scrapy] DEBUG: Crawled (200) <GET http://www.amazon.com/Armani-Jeans-Mens-Multi-XXX-Large/dp/B014DQTPHK/ref=sr_1_31/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-31&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER> (referer: http://www.amazon.com/s/ref=sr_pg_1?rh=n%3A7141123011%2Cn%3A7147441011%2Cn%3A1040658%2Cn%3A2476517011%2Cn%3A1045624%2Cp_6%3AATVPDKIKX0DER&page=1&bbn=2476517011&ie=UTF8&qid=1448965490)
+2015-12-02 12:54:19 [scrapy] DEBUG: Crawled (200) <GET http://www.amazon.com/True-Religion-Graphic-T-Shirt-XX-Large/dp/B015JP2832/ref=sr_1_25/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-25&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER> (referer: http://www.amazon.com/s/ref=sr_pg_1?rh=n%3A7141123011%2Cn%3A7147441011%2Cn%3A1040658%2Cn%3A2476517011%2Cn%3A1045624%2Cp_6%3AATVPDKIKX0DER&page=1&bbn=2476517011&ie=UTF8&qid=1448965490)
+2015-12-02 12:54:19 [scrapy] DEBUG: Crawled (200) <GET http://www.amazon.com/Armani-Jeans-Classic-Sleeve-X-Large/dp/B012EJI1IW/ref=sr_1_29/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-29&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER> (referer: http://www.amazon.com/s/ref=sr_pg_1?rh=n%3A7141123011%2Cn%3A7147441011%2Cn%3A1040658%2Cn%3A2476517011%2Cn%3A1045624%2Cp_6%3AATVPDKIKX0DER&page=1&bbn=2476517011&ie=UTF8&qid=1448965490)
+2015-12-02 12:54:21 [scrapy] ERROR: Spider error processing <GET http://www.amazon.com/Carhartt-Workwear-T-Shirt-Original-4X-Large/dp/B002GHC1DY/ref=sr_1_28/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-28&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER> (referer: http://www.amazon.com/s/ref=sr_pg_1?rh=n%3A7141123011%2Cn%3A7147441011%2Cn%3A1040658%2Cn%3A2476517011%2Cn%3A1045624%2Cp_6%3AATVPDKIKX0DER&page=1&bbn=2476517011&ie=UTF8&qid=1448965490)
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/spidermiddlewares/offsite.py", line 28, in process_spider_output
+    for x in result:
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/spidermiddlewares/depth.py", line 54, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/home/tao/Documents/amazon/amazon/spiders/review_spider.py", line 39, in parse_item_page
+    this_review_url_sel = Selector(response.read())
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/selector/unified.py", line 80, in __init__
+    _root = LxmlDocument(response, self._parser)
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/selector/lxmldocument.py", line 24, in __new__
+    cache = cls.cache.setdefault(response, {})
+  File "/usr/lib/python2.7/weakref.py", line 369, in setdefault
+    return self.data.setdefault(ref(key, self._remove),default)
+TypeError: cannot create weak reference to 'str' object
+2015-12-02 12:54:21 [scrapy] DEBUG: Crawled (200) <GET http://www.amazon.com/Champion-T2226-Mens-Jersey-T-Shirt/product-reviews/B0010EG85Q/ref=cm_cr_dp_see_all_btm?ie=UTF8&showViewpoints=1&sortBy=bySubmissionDateDescending> (referer: http://www.amazon.com/Champion-Jersey-T-Shirt-Black-X-Large/dp/B0010EG81U/ref=sr_1_34/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-34&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER)
+2015-12-02 12:54:21 [scrapy] DEBUG: Crawled (200) <GET http://www.amazon.com/Psycho-Bunny-Color-Block-T-Shirt/dp/B015KQRFBA/ref=sr_1_47/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-47&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER> (referer: http://www.amazon.com/s/ref=sr_pg_1?rh=n%3A7141123011%2Cn%3A7147441011%2Cn%3A1040658%2Cn%3A2476517011%2Cn%3A1045624%2Cp_6%3AATVPDKIKX0DER&page=1&bbn=2476517011&ie=UTF8&qid=1448965490)
+2015-12-02 12:54:21 [scrapy] DEBUG: Crawled (200) <GET http://www.amazon.com/Quiksilver-Sleeve-T-Shirt-Athletic-Heather/dp/B00Z7MH0F4/ref=sr_1_46/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-46&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER> (referer: http://www.amazon.com/s/ref=sr_pg_1?rh=n%3A7141123011%2Cn%3A7147441011%2Cn%3A1040658%2Cn%3A2476517011%2Cn%3A1045624%2Cp_6%3AATVPDKIKX0DER&page=1&bbn=2476517011&ie=UTF8&qid=1448965490)
+2015-12-02 12:54:21 [scrapy] DEBUG: Crawled (200) <GET http://www.amazon.com/Buffalo-David-Bitton-Nazone-Fashion/dp/B014VYCUIU/ref=sr_1_44/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-44&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER> (referer: http://www.amazon.com/s/ref=sr_pg_1?rh=n%3A7141123011%2Cn%3A7147441011%2Cn%3A1040658%2Cn%3A2476517011%2Cn%3A1045624%2Cp_6%3AATVPDKIKX0DER&page=1&bbn=2476517011&ie=UTF8&qid=1448965490)
+2015-12-02 12:54:21 [scrapy] DEBUG: Crawled (200) <GET http://www.amazon.com/Original-Penguin-Sleeve-Chance-Sapphire/dp/B016NENGYI/ref=sr_1_41/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-41&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER> (referer: http://www.amazon.com/s/ref=sr_pg_1?rh=n%3A7141123011%2Cn%3A7147441011%2Cn%3A1040658%2Cn%3A2476517011%2Cn%3A1045624%2Cp_6%3AATVPDKIKX0DER&page=1&bbn=2476517011&ie=UTF8&qid=1448965490)
+2015-12-02 12:54:21 [scrapy] DEBUG: Crawled (200) <GET http://www.amazon.com/Akademiks-Big-Tall-Sleeve-T-Shirt-3X-Large/dp/B0153V19HI/ref=sr_1_45/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-45&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER> (referer: http://www.amazon.com/s/ref=sr_pg_1?rh=n%3A7141123011%2Cn%3A7147441011%2Cn%3A1040658%2Cn%3A2476517011%2Cn%3A1045624%2Cp_6%3AATVPDKIKX0DER&page=1&bbn=2476517011&ie=UTF8&qid=1448965490)
+2015-12-02 12:54:21 [scrapy] DEBUG: Crawled (200) <GET http://www.amazon.com/Quiksilver-Everyday-T-Shirt-Federal-Medium/dp/B00V5WDYGY/ref=sr_1_43/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-43&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER> (referer: http://www.amazon.com/s/ref=sr_pg_1?rh=n%3A7141123011%2Cn%3A7147441011%2Cn%3A1040658%2Cn%3A2476517011%2Cn%3A1045624%2Cp_6%3AATVPDKIKX0DER&page=1&bbn=2476517011&ie=UTF8&qid=1448965490)
+2015-12-02 12:54:22 [scrapy] DEBUG: Crawled (200) <GET http://www.amazon.com/Champion-Powertrain-Performance-T-Shirt-Granite/dp/B00CDJD5BM/ref=sr_1_42/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-42&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER> (referer: http://www.amazon.com/s/ref=sr_pg_1?rh=n%3A7141123011%2Cn%3A7147441011%2Cn%3A1040658%2Cn%3A2476517011%2Cn%3A1045624%2Cp_6%3AATVPDKIKX0DER&page=1&bbn=2476517011&ie=UTF8&qid=1448965490)
+2015-12-02 12:54:22 [review] ERROR: Come in
+2015-12-02 12:54:22 [review] ERROR: reviews num :10
+2015-12-02 12:54:22 [review] ERROR: {'item': u'B0010EG81U', 'rate': u'5', 'time': u'December 1, 2015', 'user': u'A2SSZLSPY23LDT', 'text': u'just as described, thank you'}
+2015-12-02 12:54:22 [review] ERROR: {'item': u'B0010EG81U', 'rate': u'4', 'time': u'November 30, 2015', 'user': u'A33FOH3YYUTWQM', 'text': u'I would recommend it to anyone'}
+2015-12-02 12:54:22 [review] ERROR: {'item': u'B0010EG81U', 'rate': u'5', 'time': u'November 29, 2015', 'user': u'A2NQ5ABBG3NBKE', 'text': u"This jersey's are the best. For big guys like me, they are very comfortable and good looking. Recommended for big guys!"}
+2015-12-02 12:54:22 [review] ERROR: {'item': u'B0010EG81U', 'rate': u'4', 'time': u'November 29, 2015', 'user': u'A3P9K5VJOLR7PD', 'text': u'Nice build, just a tad small for what I was expecting.'}
+2015-12-02 12:54:22 [review] ERROR: {'item': u'B0010EG81U', 'rate': u'5', 'time': u'November 27, 2015', 'user': u'APZB9UCVVZAXV', 'text': u'Like them will be getting more'}
+2015-12-02 12:54:22 [review] ERROR: {'item': u'B0010EG81U', 'rate': u'2', 'time': u'November 25, 2015', 'user': u'A2ZZWUAE4AGGJK', 'text': u'after washing, there are many thread residue'}
+2015-12-02 12:54:22 [review] ERROR: {'item': u'B0010EG81U', 'rate': u'5', 'time': u'November 25, 2015', 'user': u'A1CA3N4QX3PUOY', 'text': u'I previously bought 3 of these T-Shirts for my boyfriend in various colors [Navy, Black, Granite Heather] and they were just as seen online. The colors have not faded. They fit perfectly; very comfortable. The tag-less feature is great too. After a few washes, the Granite Heather T-Shirt still looks new! So I decided to purchase the Navy Heather.'}
+2015-12-02 12:54:22 [review] ERROR: {'item': u'B0010EG81U', 'rate': u'5', 'time': u'November 23, 2015', 'user': u'A30638IMB9QZLS', 'text': u'These go great with the pants I got. Super great shirt that is very comfortable.'}
+2015-12-02 12:54:22 [review] ERROR: {'item': u'B0010EG81U', 'rate': u'4', 'time': u'November 22, 2015', 'user': u'A2C8VO0F4PYMEO', 'text': u'Love them but be careful when drying them.'}
+2015-12-02 12:54:22 [review] ERROR: {'item': u'B0010EG81U', 'rate': u'4', 'time': u'November 22, 2015', 'user': u'A29ZUWGOZRWRTX', 'text': u'ok for the price'}
+2015-12-02 12:54:22 [scrapy] WARNING: Dropped: Missing price in {'item': u'B0010EG81U',
+ 'rate': u'5',
+ 'text': u'just as described, thank you',
+ 'time': u'December 1, 2015',
+ 'user': u'A2SSZLSPY23LDT'}
+{'item': u'B0010EG81U',
+ 'rate': u'5',
+ 'text': u'just as described, thank you',
+ 'time': u'December 1, 2015',
+ 'user': u'A2SSZLSPY23LDT'}
+2015-12-02 12:54:22 [scrapy] WARNING: Dropped: Missing price in {'item': u'B0010EG81U',
+ 'rate': u'4',
+ 'text': u'I would recommend it to anyone',
+ 'time': u'November 30, 2015',
+ 'user': u'A33FOH3YYUTWQM'}
+{'item': u'B0010EG81U',
+ 'rate': u'4',
+ 'text': u'I would recommend it to anyone',
+ 'time': u'November 30, 2015',
+ 'user': u'A33FOH3YYUTWQM'}
+2015-12-02 12:54:22 [scrapy] WARNING: Dropped: Missing price in {'item': u'B0010EG81U',
+ 'rate': u'5',
+ 'text': u"This jersey's are the best. For big guys like me, they are very comfortable and good looking. Recommended for big guys!",
+ 'time': u'November 29, 2015',
+ 'user': u'A2NQ5ABBG3NBKE'}
+{'item': u'B0010EG81U',
+ 'rate': u'5',
+ 'text': u"This jersey's are the best. For big guys like me, they are very comfortable and good looking. Recommended for big guys!",
+ 'time': u'November 29, 2015',
+ 'user': u'A2NQ5ABBG3NBKE'}
+2015-12-02 12:54:22 [scrapy] WARNING: Dropped: Missing price in {'item': u'B0010EG81U',
+ 'rate': u'4',
+ 'text': u'Nice build, just a tad small for what I was expecting.',
+ 'time': u'November 29, 2015',
+ 'user': u'A3P9K5VJOLR7PD'}
+{'item': u'B0010EG81U',
+ 'rate': u'4',
+ 'text': u'Nice build, just a tad small for what I was expecting.',
+ 'time': u'November 29, 2015',
+ 'user': u'A3P9K5VJOLR7PD'}
+2015-12-02 12:54:22 [scrapy] WARNING: Dropped: Missing price in {'item': u'B0010EG81U',
+ 'rate': u'5',
+ 'text': u'Like them will be getting more',
+ 'time': u'November 27, 2015',
+ 'user': u'APZB9UCVVZAXV'}
+{'item': u'B0010EG81U',
+ 'rate': u'5',
+ 'text': u'Like them will be getting more',
+ 'time': u'November 27, 2015',
+ 'user': u'APZB9UCVVZAXV'}
+2015-12-02 12:54:22 [scrapy] WARNING: Dropped: Missing price in {'item': u'B0010EG81U',
+ 'rate': u'2',
+ 'text': u'after washing, there are many thread residue',
+ 'time': u'November 25, 2015',
+ 'user': u'A2ZZWUAE4AGGJK'}
+{'item': u'B0010EG81U',
+ 'rate': u'2',
+ 'text': u'after washing, there are many thread residue',
+ 'time': u'November 25, 2015',
+ 'user': u'A2ZZWUAE4AGGJK'}
+2015-12-02 12:54:22 [scrapy] WARNING: Dropped: Missing price in {'item': u'B0010EG81U',
+ 'rate': u'5',
+ 'text': u'I previously bought 3 of these T-Shirts for my boyfriend in various colors [Navy, Black, Granite Heather] and they were just as seen online. The colors have not faded. They fit perfectly; very comfortable. The tag-less feature is great too. After a few washes, the Granite Heather T-Shirt still looks new! So I decided to purchase the Navy Heather.',
+ 'time': u'November 25, 2015',
+ 'user': u'A1CA3N4QX3PUOY'}
+{'item': u'B0010EG81U',
+ 'rate': u'5',
+ 'text': u'I previously bought 3 of these T-Shirts for my boyfriend in various colors [Navy, Black, Granite Heather] and they were just as seen online. The colors have not faded. They fit perfectly; very comfortable. The tag-less feature is great too. After a few washes, the Granite Heather T-Shirt still looks new! So I decided to purchase the Navy Heather.',
+ 'time': u'November 25, 2015',
+ 'user': u'A1CA3N4QX3PUOY'}
+2015-12-02 12:54:22 [scrapy] WARNING: Dropped: Missing price in {'item': u'B0010EG81U',
+ 'rate': u'5',
+ 'text': u'These go great with the pants I got. Super great shirt that is very comfortable.',
+ 'time': u'November 23, 2015',
+ 'user': u'A30638IMB9QZLS'}
+{'item': u'B0010EG81U',
+ 'rate': u'5',
+ 'text': u'These go great with the pants I got. Super great shirt that is very comfortable.',
+ 'time': u'November 23, 2015',
+ 'user': u'A30638IMB9QZLS'}
+2015-12-02 12:54:22 [scrapy] WARNING: Dropped: Missing price in {'item': u'B0010EG81U',
+ 'rate': u'4',
+ 'text': u'Love them but be careful when drying them.',
+ 'time': u'November 22, 2015',
+ 'user': u'A2C8VO0F4PYMEO'}
+{'item': u'B0010EG81U',
+ 'rate': u'4',
+ 'text': u'Love them but be careful when drying them.',
+ 'time': u'November 22, 2015',
+ 'user': u'A2C8VO0F4PYMEO'}
+2015-12-02 12:54:22 [scrapy] WARNING: Dropped: Missing price in {'item': u'B0010EG81U',
+ 'rate': u'4',
+ 'text': u'ok for the price',
+ 'time': u'November 22, 2015',
+ 'user': u'A29ZUWGOZRWRTX'}
+{'item': u'B0010EG81U',
+ 'rate': u'4',
+ 'text': u'ok for the price',
+ 'time': u'November 22, 2015',
+ 'user': u'A29ZUWGOZRWRTX'}
+2015-12-02 12:54:25 [scrapy] ERROR: Spider error processing <GET http://www.amazon.com/Quiksilver-Sleeve-T-Shirt-Athletic-Heather/dp/B00Z7MH0F4/ref=sr_1_46/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-46&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER> (referer: http://www.amazon.com/s/ref=sr_pg_1?rh=n%3A7141123011%2Cn%3A7147441011%2Cn%3A1040658%2Cn%3A2476517011%2Cn%3A1045624%2Cp_6%3AATVPDKIKX0DER&page=1&bbn=2476517011&ie=UTF8&qid=1448965490)
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/spidermiddlewares/offsite.py", line 28, in process_spider_output
+    for x in result:
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/spidermiddlewares/depth.py", line 54, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/home/tao/Documents/amazon/amazon/spiders/review_spider.py", line 39, in parse_item_page
+    this_review_url_sel = Selector(response.read())
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/selector/unified.py", line 80, in __init__
+    _root = LxmlDocument(response, self._parser)
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/selector/lxmldocument.py", line 24, in __new__
+    cache = cls.cache.setdefault(response, {})
+  File "/usr/lib/python2.7/weakref.py", line 369, in setdefault
+    return self.data.setdefault(ref(key, self._remove),default)
+TypeError: cannot create weak reference to 'str' object
+2015-12-02 12:54:25 [scrapy] DEBUG: Crawled (200) <GET http://www.amazon.com/American-Apparel-Unisex-Jersey-T-Shirt/product-reviews/B01373J9IA/ref=cm_cr_dp_see_all_btm?ie=UTF8&showViewpoints=1&sortBy=bySubmissionDateDescending> (referer: http://www.amazon.com/American-Apparel-Unisex-Jersey-T-Shirt/dp/B008P4EE8M/ref=sr_1_33/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-33&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER)
+2015-12-02 12:54:25 [scrapy] DEBUG: Crawled (200) <GET http://www.amazon.com/Champion-T2228-Mens-Long-Sleeve-Tee/product-reviews/B001B2JIMC/ref=cm_cr_dp_see_all_btm?ie=UTF8&showViewpoints=1&sortBy=bySubmissionDateDescending> (referer: http://www.amazon.com/Champion-Mens-Sleeve-White-Medium/dp/B001B2JIHC/ref=sr_1_35/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-35&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER)
+2015-12-02 12:54:25 [scrapy] DEBUG: Crawled (200) <GET http://www.amazon.com/Calvin-Klein-Sleeve-Graphic-V-Neck/product-reviews/B016OY11EE/ref=cm_cr_dp_see_all_btm?ie=UTF8&showViewpoints=1&sortBy=bySubmissionDateDescending> (referer: http://www.amazon.com/Calvin-Klein-Sleeve-Graphic-Heather/dp/B016OY9UQU/ref=sr_1_1/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-1&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER)
+2015-12-02 12:54:25 [scrapy] DEBUG: Crawled (200) <GET http://www.amazon.com/Fruit-Loom-4-Pack-Pocket-T-Shirt/product-reviews/B00B81I4HQ/ref=cm_cr_dp_see_all_btm?ie=UTF8&showViewpoints=1&sortBy=bySubmissionDateDescending> (referer: http://www.amazon.com/Fruit-Loom-4-Pack-Pocket-T-Shirt/dp/B00817DW8Q/ref=sr_1_32/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-32&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER)
+2015-12-02 12:54:25 [scrapy] DEBUG: Crawled (200) <GET http://www.amazon.com/Dickies-Big-Tall-Heavyweight-Sleeve-XX-Large/dp/B00B6ED0YM/ref=sr_1_40/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-40&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER> (referer: http://www.amazon.com/s/ref=sr_pg_1?rh=n%3A7141123011%2Cn%3A7147441011%2Cn%3A1040658%2Cn%3A2476517011%2Cn%3A1045624%2Cp_6%3AATVPDKIKX0DER&page=1&bbn=2476517011&ie=UTF8&qid=1448965490)
+2015-12-02 12:54:25 [scrapy] DEBUG: Crawled (200) <GET http://www.amazon.com/Young-Reckless-Highline-Raglan-X-Large/dp/B010PIO4CQ/ref=sr_1_23/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-23&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER> (referer: http://www.amazon.com/s/ref=sr_pg_1?rh=n%3A7141123011%2Cn%3A7147441011%2Cn%3A1040658%2Cn%3A2476517011%2Cn%3A1045624%2Cp_6%3AATVPDKIKX0DER&page=1&bbn=2476517011&ie=UTF8&qid=1448965490)
+2015-12-02 12:54:25 [scrapy] DEBUG: Crawled (200) <GET http://www.amazon.com/John-Varvatos-Sleeve-V-Neck-T-Shirt/dp/B00D3W0XY0/ref=sr_1_24/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-24&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER> (referer: http://www.amazon.com/s/ref=sr_pg_1?rh=n%3A7141123011%2Cn%3A7147441011%2Cn%3A1040658%2Cn%3A2476517011%2Cn%3A1045624%2Cp_6%3AATVPDKIKX0DER&page=1&bbn=2476517011&ie=UTF8&qid=1448965490)
+2015-12-02 12:54:25 [scrapy] DEBUG: Crawled (200) <GET http://www.amazon.com/Carhartt-Workwear-Pocket-Midweight-Original/dp/B002GHC1KC/ref=sr_1_22/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-22&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER> (referer: http://www.amazon.com/s/ref=sr_pg_1?rh=n%3A7141123011%2Cn%3A7147441011%2Cn%3A1040658%2Cn%3A2476517011%2Cn%3A1045624%2Cp_6%3AATVPDKIKX0DER&page=1&bbn=2476517011&ie=UTF8&qid=1448965490)
+2015-12-02 12:54:29 [scrapy] ERROR: Spider error processing <GET http://www.amazon.com/Akademiks-Big-Tall-Sleeve-T-Shirt-3X-Large/dp/B0153V19HI/ref=sr_1_45/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-45&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER> (referer: http://www.amazon.com/s/ref=sr_pg_1?rh=n%3A7141123011%2Cn%3A7147441011%2Cn%3A1040658%2Cn%3A2476517011%2Cn%3A1045624%2Cp_6%3AATVPDKIKX0DER&page=1&bbn=2476517011&ie=UTF8&qid=1448965490)
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/spidermiddlewares/offsite.py", line 28, in process_spider_output
+    for x in result:
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/spidermiddlewares/depth.py", line 54, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/home/tao/Documents/amazon/amazon/spiders/review_spider.py", line 39, in parse_item_page
+    this_review_url_sel = Selector(response.read())
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/selector/unified.py", line 80, in __init__
+    _root = LxmlDocument(response, self._parser)
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/selector/lxmldocument.py", line 24, in __new__
+    cache = cls.cache.setdefault(response, {})
+  File "/usr/lib/python2.7/weakref.py", line 369, in setdefault
+    return self.data.setdefault(ref(key, self._remove),default)
+TypeError: cannot create weak reference to 'str' object
+2015-12-02 12:54:32 [scrapy] ERROR: Spider error processing <GET http://www.amazon.com/Quiksilver-Everyday-T-Shirt-Federal-Medium/dp/B00V5WDYGY/ref=sr_1_43/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-43&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER> (referer: http://www.amazon.com/s/ref=sr_pg_1?rh=n%3A7141123011%2Cn%3A7147441011%2Cn%3A1040658%2Cn%3A2476517011%2Cn%3A1045624%2Cp_6%3AATVPDKIKX0DER&page=1&bbn=2476517011&ie=UTF8&qid=1448965490)
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/spidermiddlewares/offsite.py", line 28, in process_spider_output
+    for x in result:
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/spidermiddlewares/depth.py", line 54, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/home/tao/Documents/amazon/amazon/spiders/review_spider.py", line 39, in parse_item_page
+    this_review_url_sel = Selector(response.read())
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/selector/unified.py", line 80, in __init__
+    _root = LxmlDocument(response, self._parser)
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/selector/lxmldocument.py", line 24, in __new__
+    cache = cls.cache.setdefault(response, {})
+  File "/usr/lib/python2.7/weakref.py", line 369, in setdefault
+    return self.data.setdefault(ref(key, self._remove),default)
+TypeError: cannot create weak reference to 'str' object
+2015-12-02 12:54:32 [scrapy] DEBUG: Crawled (200) <GET http://www.amazon.com/Carhartt-Workwear-T-Shirt-Original-K87/product-reviews/B00SM7KP6W/ref=cm_cr_dp_see_all_btm?ie=UTF8&showViewpoints=1&sortBy=bySubmissionDateDescending> (referer: http://www.amazon.com/Carhartt-Workwear-T-Shirt-Original-4X-Large/dp/B002GHC1DY/ref=sr_1_28/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-28&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER)
+2015-12-02 12:54:32 [review] ERROR: Come in
+2015-12-02 12:54:32 [review] ERROR: reviews num :10
+2015-12-02 12:54:32 [review] ERROR: {'item': u'B008P4EE8M', 'rate': u'4', 'time': u'November 24, 2015', 'user': u'AEZYHNWYJW7JE', 'text': u'Nice tee shirt. I expect it will last for a while.'}
+2015-12-02 12:54:32 [review] ERROR: {'item': u'B008P4EE8M', 'rate': u'4', 'time': u'November 23, 2015', 'user': u'AD4M4OOHA6Y0Y', 'text': u"It's a nice shirt for an undershirt or even by itself. Plain grey at a nice price and a good blend."}
+2015-12-02 12:54:32 [review] ERROR: {'item': u'B008P4EE8M', 'rate': u'2', 'time': u'November 22, 2015', 'user': u'A1CGZZ4CIU0CYB', 'text': u"Size purchased didn't fit as well as other brand I've purchased in the past I would suggest buying the next size up."}
+2015-12-02 12:54:32 [review] ERROR: {'item': u'B008P4EE8M', 'rate': u'2', 'time': u'November 16, 2015', 'user': u'AKU1GGEMNF0A', 'text': u"Lovely shirt and all but it's got a loose thread out of the box :/ very lame. My first AA purchase and probably my last."}
+2015-12-02 12:54:32 [review] ERROR: {'item': u'B008P4EE8M', 'rate': u'5', 'time': u'November 16, 2015', 'user': u'A3FX0OVNU4H7VU', 'text': u'Worked great for my daughters play! She needed a green shirt to be "Grass" in Lion King'}
+2015-12-02 12:54:32 [review] ERROR: {'item': u'B008P4EE8M', 'rate': u'5', 'time': u'November 11, 2015', 'user': u'A3125TYUGWS4K6', 'text': u'One of my favorite shirts to wear. Shrinks a little after wash but overall love it!'}
+2015-12-02 12:54:32 [review] ERROR: {'item': u'B008P4EE8M', 'rate': u'4', 'time': u'November 6, 2015', 'user': u'A24CW951N01AQD', 'text': u'good tee'}
+2015-12-02 12:54:32 [review] ERROR: {'item': u'B008P4EE8M', 'rate': u'5', 'time': u'November 4, 2015', 'user': u'A2T9N7DUR2Y7RN', 'text': u'Fit perfect.. Great quality'}
+2015-12-02 12:54:32 [review] ERROR: {'item': u'B008P4EE8M', 'rate': u'5', 'time': u'November 4, 2015', 'user': u'A1UB9AG9V76VZI', 'text': u'Nice product'}
+2015-12-02 12:54:32 [review] ERROR: {'item': u'B008P4EE8M', 'rate': u'5', 'time': u'October 29, 2015', 'user': u'A2V58YJS58MJPS', 'text': u'American Apparel T-shits are my favorite. Very soft and comfortable.'}
+2015-12-02 12:54:32 [review] ERROR: Come in
+2015-12-02 12:54:32 [review] ERROR: reviews num :10
+2015-12-02 12:54:32 [review] ERROR: {'item': u'B001B2JIHC', 'rate': u'5', 'time': u'December 1, 2015', 'user': u'A7Z12OMZ716OI', 'text': u"The material is very soft.  The grey doesn't look washed out.  Good sleeve length ."}
+2015-12-02 12:54:32 [review] ERROR: {'item': u'B001B2JIHC', 'rate': u'4', 'time': u'November 25, 2015', 'user': u'A2L14FWZGQGNO0', 'text': u"I'm a medium and purchased M, the shirts fitted fine at first, but, shrunk a bit in the wash and no longer feel completely comfortable. Can't argue with price though."}
+2015-12-02 12:54:32 [review] ERROR: {'item': u'B001B2JIHC', 'rate': u'5', 'time': u'November 25, 2015', 'user': u'A1WAW6H8X2AW2C', 'text': u'Real nice long sleeved tee shirt good fit and I really like the open end of sleeves rather than non ribbed cuffed type.'}
+2015-12-02 12:54:32 [review] ERROR: {'item': u'B001B2JIHC', 'rate': u'5', 'time': u'November 24, 2015', 'user': u'A18W0LAQZI0KJ0', 'text': u'I am 6\' 3" and 230 pounds and this shirt fits absolutely perfect. Although, I am a very built guy\u2026I am rock solid, with high shoulders. If you are a normal size guy then this shirt WILL be too big, so order down a size. My original order was for one shirt because I wasn\'t sure about the fit. Now I am about to order 3 more.'}
+2015-12-02 12:54:32 [review] ERROR: {'item': u'B001B2JIHC', 'rate': u'5', 'time': u'November 24, 2015', 'user': u'A1REUYIYSCHQGS', 'text': u'Good....'}
+2015-12-02 12:54:32 [review] ERROR: {'item': u'B001B2JIHC', 'rate': u'4', 'time': u'November 24, 2015', 'user': u'ALX1690B3OFZH', 'text': u'Looks good on me. Fair enough,'}
+2015-12-02 12:54:32 [review] ERROR: {'item': u'B001B2JIHC', 'rate': u'4', 'time': u'November 24, 2015', 'user': u'A1DZ57SEYWK7G', 'text': u"Held 'em up, looked fine. Haven't worn them yet...now, if the rest of my order would just show up..."}
+2015-12-02 12:54:32 [review] ERROR: {'item': u'B001B2JIHC', 'rate': u'3', 'time': u'November 23, 2015', 'user': u'AI5L50B9OB4RI', 'text': u'Nice shirt, wish the cuffs were tighter to the wrists.'}
+2015-12-02 12:54:32 [review] ERROR: {'item': u'B001B2JIHC', 'rate': u'5', 'time': u'November 23, 2015', 'user': u'A3IJUGZJB0N2Y', 'text': u'Got this short for my boyfriend and he loves it!! Fits as expected and is great material! Perfect for a small gift and very good price versus normal price for a shirt like that.'}
+2015-12-02 12:54:32 [review] ERROR: {'item': u'B001B2JIHC', 'rate': u'5', 'time': u'November 21, 2015', 'user': u'A3NFVF0FYB6O6F', 'text': u'BUGGA IS CHERRY!!!'}
+2015-12-02 12:54:32 [review] ERROR: Come in
+2015-12-02 12:54:32 [review] ERROR: reviews num :1
+2015-12-02 12:54:32 [review] ERROR: {'item': u'B016OY9UQU', 'rate': u'4', 'time': u'December 1, 2015', 'user': u'A1EG4RF5W0T4IW', 'text': u'it is good to wear.'}
+2015-12-02 12:54:32 [review] ERROR: Come in
+2015-12-02 12:54:32 [review] ERROR: reviews num :10
+2015-12-02 12:54:32 [review] ERROR: {'item': u'B00817DW8Q', 'rate': u'5', 'time': u'December 1, 2015', 'user': u'A10OKF8VIONHIV', 'text': u'Got for my father-in-law for Christmas.  Very pleased and would recommend.'}
+2015-12-02 12:54:32 [review] ERROR: {'item': u'B00817DW8Q', 'rate': u'5', 'time': u'November 30, 2015', 'user': u'A2QREEB62WWJFG', 'text': u'excellent!'}
+2015-12-02 12:54:32 [review] ERROR: {'item': u'B00817DW8Q', 'rate': u'3', 'time': u'November 29, 2015', 'user': u'A2UH0ECT0TYAGK', 'text': u'The colors shown were not what I received. Other than that they were fine.'}
+2015-12-02 12:54:32 [review] ERROR: {'item': u'B00817DW8Q', 'rate': u'2', 'time': u'November 29, 2015', 'user': u'A33TR4Y4O0HYVX', 'text': u"I ordered the shirts for the colors advertised for a Christmas gift...received lighter/different colors that looked washed out. Can't say I would buy again which is ashame because the material is soft and nice..but I was really hoping for the colors advertised. Disappointed."}
+2015-12-02 12:54:32 [review] ERROR: {'item': u'B00817DW8Q', 'rate': u'5', 'time': u'November 29, 2015', 'user': u'A2S7E6XB9N5YK5', 'text': u'They are a little on the "thinner" side (material),but the fact that my metabolism runs a bit faster (meaning i sweat easier),i got these on purpose..'}
+2015-12-02 12:54:32 [review] ERROR: {'item': u'B00817DW8Q', 'rate': u'2', 'time': u'November 27, 2015', 'user': u'A13KNX9VWZKB1Z', 'text': u'The t-shirts were made of very rough material. They were unpleasant to wear.'}
+2015-12-02 12:54:32 [review] ERROR: {'item': u'B00817DW8Q', 'rate': u'5', 'time': u'November 27, 2015', 'user': u'A262MOZ6MYAQX6', 'text': u'good quality'}
+2015-12-02 12:54:32 [review] ERROR: {'item': u'B00817DW8Q', 'rate': u'3', 'time': u'November 26, 2015', 'user': u'A3V4C25XM2SMXI', 'text': u'diferents colors'}
+2015-12-02 12:54:32 [review] ERROR: {'item': u'B00817DW8Q', 'rate': u'5', 'time': u'November 25, 2015', 'user': u'AV3VO9SFGJQW', 'text': u'So far I find these to be much better than the Hanes shirts I have ordered in the past.  I wear them to work in a factory so we will see how they hold up.  However, the stitching coloring and fit seem to be better.'}
+2015-12-02 12:54:32 [review] ERROR: {'item': u'B00817DW8Q', 'rate': u'5', 'time': u'November 25, 2015', 'user': u'A1CQ6QC80070HQ', 'text': u'I bought these for my husband and he love them NOW that I got the right size. He fits large in almost everything and the large fit him great until I washed it and it shrunk slightly. He prefers his T-shirts just a little loose fitting so I sent the large back and got the XL and he is a happy camper. They are a great set of colors and I got him the other 4-pack that has more earth tones - awesome!'}
+2015-12-02 12:54:43 [scrapy] ERROR: Spider error processing <GET http://www.amazon.com/Champion-Powertrain-Performance-T-Shirt-Granite/dp/B00CDJD5BM/ref=sr_1_42/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-42&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER> (referer: http://www.amazon.com/s/ref=sr_pg_1?rh=n%3A7141123011%2Cn%3A7147441011%2Cn%3A1040658%2Cn%3A2476517011%2Cn%3A1045624%2Cp_6%3AATVPDKIKX0DER&page=1&bbn=2476517011&ie=UTF8&qid=1448965490)
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/spidermiddlewares/offsite.py", line 28, in process_spider_output
+    for x in result:
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/spidermiddlewares/depth.py", line 54, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/home/tao/Documents/amazon/amazon/spiders/review_spider.py", line 39, in parse_item_page
+    this_review_url_sel = Selector(response.read())
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/selector/unified.py", line 80, in __init__
+    _root = LxmlDocument(response, self._parser)
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/selector/lxmldocument.py", line 24, in __new__
+    cache = cls.cache.setdefault(response, {})
+  File "/usr/lib/python2.7/weakref.py", line 369, in setdefault
+    return self.data.setdefault(ref(key, self._remove),default)
+TypeError: cannot create weak reference to 'str' object
+2015-12-02 12:54:43 [scrapy] DEBUG: Crawled (200) <GET http://www.amazon.com/SPENCER-Montgomery-Colorblock-Long-Sleeve-Charcoal/dp/B0151GZXVI/ref=sr_1_21/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-21&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER> (referer: http://www.amazon.com/s/ref=sr_pg_1?rh=n%3A7141123011%2Cn%3A7147441011%2Cn%3A1040658%2Cn%3A2476517011%2Cn%3A1045624%2Cp_6%3AATVPDKIKX0DER&page=1&bbn=2476517011&ie=UTF8&qid=1448965490)
+2015-12-02 12:54:43 [scrapy] DEBUG: Crawled (200) <GET http://www.amazon.com/Calvin-Klein-Short-Sleeve-Digital/dp/B016OY1YWI/ref=sr_1_20/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-20&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER> (referer: http://www.amazon.com/s/ref=sr_pg_1?rh=n%3A7141123011%2Cn%3A7147441011%2Cn%3A1040658%2Cn%3A2476517011%2Cn%3A1045624%2Cp_6%3AATVPDKIKX0DER&page=1&bbn=2476517011&ie=UTF8&qid=1448965490)
+2015-12-02 12:54:43 [scrapy] DEBUG: Crawled (200) <GET http://www.amazon.com/Original-Penguin-Triblend-Distressed-Medieval/dp/B012ZFQCRC/ref=sr_1_19/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-19&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER> (referer: http://www.amazon.com/s/ref=sr_pg_1?rh=n%3A7141123011%2Cn%3A7147441011%2Cn%3A1040658%2Cn%3A2476517011%2Cn%3A1045624%2Cp_6%3AATVPDKIKX0DER&page=1&bbn=2476517011&ie=UTF8&qid=1448965490)
+2015-12-02 12:54:43 [scrapy] WARNING: Dropped: Missing price in {'item': u'B008P4EE8M',
+ 'rate': u'4',
+ 'text': u'Nice tee shirt. I expect it will last for a while.',
+ 'time': u'November 24, 2015',
+ 'user': u'AEZYHNWYJW7JE'}
+{'item': u'B008P4EE8M',
+ 'rate': u'4',
+ 'text': u'Nice tee shirt. I expect it will last for a while.',
+ 'time': u'November 24, 2015',
+ 'user': u'AEZYHNWYJW7JE'}
+2015-12-02 12:54:43 [scrapy] WARNING: Dropped: Missing price in {'item': u'B008P4EE8M',
+ 'rate': u'4',
+ 'text': u"It's a nice shirt for an undershirt or even by itself. Plain grey at a nice price and a good blend.",
+ 'time': u'November 23, 2015',
+ 'user': u'AD4M4OOHA6Y0Y'}
+{'item': u'B008P4EE8M',
+ 'rate': u'4',
+ 'text': u"It's a nice shirt for an undershirt or even by itself. Plain grey at a nice price and a good blend.",
+ 'time': u'November 23, 2015',
+ 'user': u'AD4M4OOHA6Y0Y'}
+2015-12-02 12:54:43 [scrapy] WARNING: Dropped: Missing price in {'item': u'B008P4EE8M',
+ 'rate': u'2',
+ 'text': u"Size purchased didn't fit as well as other brand I've purchased in the past I would suggest buying the next size up.",
+ 'time': u'November 22, 2015',
+ 'user': u'A1CGZZ4CIU0CYB'}
+{'item': u'B008P4EE8M',
+ 'rate': u'2',
+ 'text': u"Size purchased didn't fit as well as other brand I've purchased in the past I would suggest buying the next size up.",
+ 'time': u'November 22, 2015',
+ 'user': u'A1CGZZ4CIU0CYB'}
+2015-12-02 12:54:43 [scrapy] WARNING: Dropped: Missing price in {'item': u'B008P4EE8M',
+ 'rate': u'2',
+ 'text': u"Lovely shirt and all but it's got a loose thread out of the box :/ very lame. My first AA purchase and probably my last.",
+ 'time': u'November 16, 2015',
+ 'user': u'AKU1GGEMNF0A'}
+{'item': u'B008P4EE8M',
+ 'rate': u'2',
+ 'text': u"Lovely shirt and all but it's got a loose thread out of the box :/ very lame. My first AA purchase and probably my last.",
+ 'time': u'November 16, 2015',
+ 'user': u'AKU1GGEMNF0A'}
+2015-12-02 12:54:43 [scrapy] WARNING: Dropped: Missing price in {'item': u'B008P4EE8M',
+ 'rate': u'5',
+ 'text': u'Worked great for my daughters play! She needed a green shirt to be "Grass" in Lion King',
+ 'time': u'November 16, 2015',
+ 'user': u'A3FX0OVNU4H7VU'}
+{'item': u'B008P4EE8M',
+ 'rate': u'5',
+ 'text': u'Worked great for my daughters play! She needed a green shirt to be "Grass" in Lion King',
+ 'time': u'November 16, 2015',
+ 'user': u'A3FX0OVNU4H7VU'}
+2015-12-02 12:54:43 [scrapy] WARNING: Dropped: Missing price in {'item': u'B008P4EE8M',
+ 'rate': u'5',
+ 'text': u'One of my favorite shirts to wear. Shrinks a little after wash but overall love it!',
+ 'time': u'November 11, 2015',
+ 'user': u'A3125TYUGWS4K6'}
+{'item': u'B008P4EE8M',
+ 'rate': u'5',
+ 'text': u'One of my favorite shirts to wear. Shrinks a little after wash but overall love it!',
+ 'time': u'November 11, 2015',
+ 'user': u'A3125TYUGWS4K6'}
+2015-12-02 12:54:43 [scrapy] WARNING: Dropped: Missing price in {'item': u'B008P4EE8M',
+ 'rate': u'4',
+ 'text': u'good tee',
+ 'time': u'November 6, 2015',
+ 'user': u'A24CW951N01AQD'}
+{'item': u'B008P4EE8M',
+ 'rate': u'4',
+ 'text': u'good tee',
+ 'time': u'November 6, 2015',
+ 'user': u'A24CW951N01AQD'}
+2015-12-02 12:54:43 [scrapy] WARNING: Dropped: Missing price in {'item': u'B008P4EE8M',
+ 'rate': u'5',
+ 'text': u'Fit perfect.. Great quality',
+ 'time': u'November 4, 2015',
+ 'user': u'A2T9N7DUR2Y7RN'}
+{'item': u'B008P4EE8M',
+ 'rate': u'5',
+ 'text': u'Fit perfect.. Great quality',
+ 'time': u'November 4, 2015',
+ 'user': u'A2T9N7DUR2Y7RN'}
+2015-12-02 12:54:43 [scrapy] WARNING: Dropped: Missing price in {'item': u'B008P4EE8M',
+ 'rate': u'5',
+ 'text': u'Nice product',
+ 'time': u'November 4, 2015',
+ 'user': u'A1UB9AG9V76VZI'}
+{'item': u'B008P4EE8M',
+ 'rate': u'5',
+ 'text': u'Nice product',
+ 'time': u'November 4, 2015',
+ 'user': u'A1UB9AG9V76VZI'}
+2015-12-02 12:54:43 [scrapy] WARNING: Dropped: Missing price in {'item': u'B008P4EE8M',
+ 'rate': u'5',
+ 'text': u'American Apparel T-shits are my favorite. Very soft and comfortable.',
+ 'time': u'October 29, 2015',
+ 'user': u'A2V58YJS58MJPS'}
+{'item': u'B008P4EE8M',
+ 'rate': u'5',
+ 'text': u'American Apparel T-shits are my favorite. Very soft and comfortable.',
+ 'time': u'October 29, 2015',
+ 'user': u'A2V58YJS58MJPS'}
+2015-12-02 12:54:43 [scrapy] WARNING: Dropped: Missing price in {'item': u'B001B2JIHC',
+ 'rate': u'5',
+ 'text': u"The material is very soft.  The grey doesn't look washed out.  Good sleeve length .",
+ 'time': u'December 1, 2015',
+ 'user': u'A7Z12OMZ716OI'}
+{'item': u'B001B2JIHC',
+ 'rate': u'5',
+ 'text': u"The material is very soft.  The grey doesn't look washed out.  Good sleeve length .",
+ 'time': u'December 1, 2015',
+ 'user': u'A7Z12OMZ716OI'}
+2015-12-02 12:54:43 [scrapy] WARNING: Dropped: Missing price in {'item': u'B001B2JIHC',
+ 'rate': u'4',
+ 'text': u"I'm a medium and purchased M, the shirts fitted fine at first, but, shrunk a bit in the wash and no longer feel completely comfortable. Can't argue with price though.",
+ 'time': u'November 25, 2015',
+ 'user': u'A2L14FWZGQGNO0'}
+{'item': u'B001B2JIHC',
+ 'rate': u'4',
+ 'text': u"I'm a medium and purchased M, the shirts fitted fine at first, but, shrunk a bit in the wash and no longer feel completely comfortable. Can't argue with price though.",
+ 'time': u'November 25, 2015',
+ 'user': u'A2L14FWZGQGNO0'}
+2015-12-02 12:54:43 [scrapy] WARNING: Dropped: Missing price in {'item': u'B001B2JIHC',
+ 'rate': u'5',
+ 'text': u'Real nice long sleeved tee shirt good fit and I really like the open end of sleeves rather than non ribbed cuffed type.',
+ 'time': u'November 25, 2015',
+ 'user': u'A1WAW6H8X2AW2C'}
+{'item': u'B001B2JIHC',
+ 'rate': u'5',
+ 'text': u'Real nice long sleeved tee shirt good fit and I really like the open end of sleeves rather than non ribbed cuffed type.',
+ 'time': u'November 25, 2015',
+ 'user': u'A1WAW6H8X2AW2C'}
+2015-12-02 12:54:43 [scrapy] WARNING: Dropped: Missing price in {'item': u'B001B2JIHC',
+ 'rate': u'5',
+ 'text': u'I am 6\' 3" and 230 pounds and this shirt fits absolutely perfect. Although, I am a very built guy\u2026I am rock solid, with high shoulders. If you are a normal size guy then this shirt WILL be too big, so order down a size. My original order was for one shirt because I wasn\'t sure about the fit. Now I am about to order 3 more.',
+ 'time': u'November 24, 2015',
+ 'user': u'A18W0LAQZI0KJ0'}
+{'item': u'B001B2JIHC',
+ 'rate': u'5',
+ 'text': u'I am 6\' 3" and 230 pounds and this shirt fits absolutely perfect. Although, I am a very built guy\u2026I am rock solid, with high shoulders. If you are a normal size guy then this shirt WILL be too big, so order down a size. My original order was for one shirt because I wasn\'t sure about the fit. Now I am about to order 3 more.',
+ 'time': u'November 24, 2015',
+ 'user': u'A18W0LAQZI0KJ0'}
+2015-12-02 12:54:43 [scrapy] WARNING: Dropped: Missing price in {'item': u'B001B2JIHC',
+ 'rate': u'5',
+ 'text': u'Good....',
+ 'time': u'November 24, 2015',
+ 'user': u'A1REUYIYSCHQGS'}
+{'item': u'B001B2JIHC',
+ 'rate': u'5',
+ 'text': u'Good....',
+ 'time': u'November 24, 2015',
+ 'user': u'A1REUYIYSCHQGS'}
+2015-12-02 12:54:43 [scrapy] WARNING: Dropped: Missing price in {'item': u'B001B2JIHC',
+ 'rate': u'4',
+ 'text': u'Looks good on me. Fair enough,',
+ 'time': u'November 24, 2015',
+ 'user': u'ALX1690B3OFZH'}
+{'item': u'B001B2JIHC',
+ 'rate': u'4',
+ 'text': u'Looks good on me. Fair enough,',
+ 'time': u'November 24, 2015',
+ 'user': u'ALX1690B3OFZH'}
+2015-12-02 12:54:43 [scrapy] WARNING: Dropped: Missing price in {'item': u'B001B2JIHC',
+ 'rate': u'4',
+ 'text': u"Held 'em up, looked fine. Haven't worn them yet...now, if the rest of my order would just show up...",
+ 'time': u'November 24, 2015',
+ 'user': u'A1DZ57SEYWK7G'}
+{'item': u'B001B2JIHC',
+ 'rate': u'4',
+ 'text': u"Held 'em up, looked fine. Haven't worn them yet...now, if the rest of my order would just show up...",
+ 'time': u'November 24, 2015',
+ 'user': u'A1DZ57SEYWK7G'}
+2015-12-02 12:54:43 [scrapy] WARNING: Dropped: Missing price in {'item': u'B001B2JIHC',
+ 'rate': u'3',
+ 'text': u'Nice shirt, wish the cuffs were tighter to the wrists.',
+ 'time': u'November 23, 2015',
+ 'user': u'AI5L50B9OB4RI'}
+{'item': u'B001B2JIHC',
+ 'rate': u'3',
+ 'text': u'Nice shirt, wish the cuffs were tighter to the wrists.',
+ 'time': u'November 23, 2015',
+ 'user': u'AI5L50B9OB4RI'}
+2015-12-02 12:54:43 [scrapy] WARNING: Dropped: Missing price in {'item': u'B001B2JIHC',
+ 'rate': u'5',
+ 'text': u'Got this short for my boyfriend and he loves it!! Fits as expected and is great material! Perfect for a small gift and very good price versus normal price for a shirt like that.',
+ 'time': u'November 23, 2015',
+ 'user': u'A3IJUGZJB0N2Y'}
+{'item': u'B001B2JIHC',
+ 'rate': u'5',
+ 'text': u'Got this short for my boyfriend and he loves it!! Fits as expected and is great material! Perfect for a small gift and very good price versus normal price for a shirt like that.',
+ 'time': u'November 23, 2015',
+ 'user': u'A3IJUGZJB0N2Y'}
+2015-12-02 12:54:43 [scrapy] WARNING: Dropped: Missing price in {'item': u'B001B2JIHC',
+ 'rate': u'5',
+ 'text': u'BUGGA IS CHERRY!!!',
+ 'time': u'November 21, 2015',
+ 'user': u'A3NFVF0FYB6O6F'}
+{'item': u'B001B2JIHC',
+ 'rate': u'5',
+ 'text': u'BUGGA IS CHERRY!!!',
+ 'time': u'November 21, 2015',
+ 'user': u'A3NFVF0FYB6O6F'}
+2015-12-02 12:54:43 [scrapy] WARNING: Dropped: Missing price in {'item': u'B016OY9UQU',
+ 'rate': u'4',
+ 'text': u'it is good to wear.',
+ 'time': u'December 1, 2015',
+ 'user': u'A1EG4RF5W0T4IW'}
+{'item': u'B016OY9UQU',
+ 'rate': u'4',
+ 'text': u'it is good to wear.',
+ 'time': u'December 1, 2015',
+ 'user': u'A1EG4RF5W0T4IW'}
+2015-12-02 12:54:43 [scrapy] WARNING: Dropped: Missing price in {'item': u'B00817DW8Q',
+ 'rate': u'5',
+ 'text': u'Got for my father-in-law for Christmas.  Very pleased and would recommend.',
+ 'time': u'December 1, 2015',
+ 'user': u'A10OKF8VIONHIV'}
+{'item': u'B00817DW8Q',
+ 'rate': u'5',
+ 'text': u'Got for my father-in-law for Christmas.  Very pleased and would recommend.',
+ 'time': u'December 1, 2015',
+ 'user': u'A10OKF8VIONHIV'}
+2015-12-02 12:54:43 [scrapy] WARNING: Dropped: Missing price in {'item': u'B00817DW8Q',
+ 'rate': u'5',
+ 'text': u'excellent!',
+ 'time': u'November 30, 2015',
+ 'user': u'A2QREEB62WWJFG'}
+{'item': u'B00817DW8Q',
+ 'rate': u'5',
+ 'text': u'excellent!',
+ 'time': u'November 30, 2015',
+ 'user': u'A2QREEB62WWJFG'}
+2015-12-02 12:54:43 [scrapy] WARNING: Dropped: Missing price in {'item': u'B00817DW8Q',
+ 'rate': u'3',
+ 'text': u'The colors shown were not what I received. Other than that they were fine.',
+ 'time': u'November 29, 2015',
+ 'user': u'A2UH0ECT0TYAGK'}
+{'item': u'B00817DW8Q',
+ 'rate': u'3',
+ 'text': u'The colors shown were not what I received. Other than that they were fine.',
+ 'time': u'November 29, 2015',
+ 'user': u'A2UH0ECT0TYAGK'}
+2015-12-02 12:54:43 [scrapy] WARNING: Dropped: Missing price in {'item': u'B00817DW8Q',
+ 'rate': u'2',
+ 'text': u"I ordered the shirts for the colors advertised for a Christmas gift...received lighter/different colors that looked washed out. Can't say I would buy again which is ashame because the material is soft and nice..but I was really hoping for the colors advertised. Disappointed.",
+ 'time': u'November 29, 2015',
+ 'user': u'A33TR4Y4O0HYVX'}
+{'item': u'B00817DW8Q',
+ 'rate': u'2',
+ 'text': u"I ordered the shirts for the colors advertised for a Christmas gift...received lighter/different colors that looked washed out. Can't say I would buy again which is ashame because the material is soft and nice..but I was really hoping for the colors advertised. Disappointed.",
+ 'time': u'November 29, 2015',
+ 'user': u'A33TR4Y4O0HYVX'}
+2015-12-02 12:54:43 [scrapy] WARNING: Dropped: Missing price in {'item': u'B00817DW8Q',
+ 'rate': u'5',
+ 'text': u'They are a little on the "thinner" side (material),but the fact that my metabolism runs a bit faster (meaning i sweat easier),i got these on purpose..',
+ 'time': u'November 29, 2015',
+ 'user': u'A2S7E6XB9N5YK5'}
+{'item': u'B00817DW8Q',
+ 'rate': u'5',
+ 'text': u'They are a little on the "thinner" side (material),but the fact that my metabolism runs a bit faster (meaning i sweat easier),i got these on purpose..',
+ 'time': u'November 29, 2015',
+ 'user': u'A2S7E6XB9N5YK5'}
+2015-12-02 12:54:43 [scrapy] WARNING: Dropped: Missing price in {'item': u'B00817DW8Q',
+ 'rate': u'2',
+ 'text': u'The t-shirts were made of very rough material. They were unpleasant to wear.',
+ 'time': u'November 27, 2015',
+ 'user': u'A13KNX9VWZKB1Z'}
+{'item': u'B00817DW8Q',
+ 'rate': u'2',
+ 'text': u'The t-shirts were made of very rough material. They were unpleasant to wear.',
+ 'time': u'November 27, 2015',
+ 'user': u'A13KNX9VWZKB1Z'}
+2015-12-02 12:54:43 [scrapy] WARNING: Dropped: Missing price in {'item': u'B00817DW8Q',
+ 'rate': u'5',
+ 'text': u'good quality',
+ 'time': u'November 27, 2015',
+ 'user': u'A262MOZ6MYAQX6'}
+{'item': u'B00817DW8Q',
+ 'rate': u'5',
+ 'text': u'good quality',
+ 'time': u'November 27, 2015',
+ 'user': u'A262MOZ6MYAQX6'}
+2015-12-02 12:54:43 [scrapy] WARNING: Dropped: Missing price in {'item': u'B00817DW8Q',
+ 'rate': u'3',
+ 'text': u'diferents colors',
+ 'time': u'November 26, 2015',
+ 'user': u'A3V4C25XM2SMXI'}
+{'item': u'B00817DW8Q',
+ 'rate': u'3',
+ 'text': u'diferents colors',
+ 'time': u'November 26, 2015',
+ 'user': u'A3V4C25XM2SMXI'}
+2015-12-02 12:54:43 [scrapy] WARNING: Dropped: Missing price in {'item': u'B00817DW8Q',
+ 'rate': u'5',
+ 'text': u'So far I find these to be much better than the Hanes shirts I have ordered in the past.  I wear them to work in a factory so we will see how they hold up.  However, the stitching coloring and fit seem to be better.',
+ 'time': u'November 25, 2015',
+ 'user': u'AV3VO9SFGJQW'}
+{'item': u'B00817DW8Q',
+ 'rate': u'5',
+ 'text': u'So far I find these to be much better than the Hanes shirts I have ordered in the past.  I wear them to work in a factory so we will see how they hold up.  However, the stitching coloring and fit seem to be better.',
+ 'time': u'November 25, 2015',
+ 'user': u'AV3VO9SFGJQW'}
+2015-12-02 12:54:43 [scrapy] WARNING: Dropped: Missing price in {'item': u'B00817DW8Q',
+ 'rate': u'5',
+ 'text': u'I bought these for my husband and he love them NOW that I got the right size. He fits large in almost everything and the large fit him great until I washed it and it shrunk slightly. He prefers his T-shirts just a little loose fitting so I sent the large back and got the XL and he is a happy camper. They are a great set of colors and I got him the other 4-pack that has more earth tones - awesome!',
+ 'time': u'November 25, 2015',
+ 'user': u'A1CQ6QC80070HQ'}
+{'item': u'B00817DW8Q',
+ 'rate': u'5',
+ 'text': u'I bought these for my husband and he love them NOW that I got the right size. He fits large in almost everything and the large fit him great until I washed it and it shrunk slightly. He prefers his T-shirts just a little loose fitting so I sent the large back and got the XL and he is a happy camper. They are a great set of colors and I got him the other 4-pack that has more earth tones - awesome!',
+ 'time': u'November 25, 2015',
+ 'user': u'A1CQ6QC80070HQ'}
+2015-12-02 12:54:43 [review] ERROR: Come in
+2015-12-02 12:54:43 [review] ERROR: reviews num :10
+2015-12-02 12:54:43 [review] ERROR: {'item': u'B002GHC1DY', 'rate': u'5', 'time': u'December 1, 2015', 'user': u'A19KR1KK3KFFX9', 'text': u'Perfect'}
+2015-12-02 12:54:43 [review] ERROR: {'item': u'B002GHC1DY', 'rate': u'5', 'time': u'December 1, 2015', 'user': u'A2OFZ0PA2H7PHQ', 'text': u"Love the quality of these shirts, but they aren't as long as I had hoped.  I purchased SEVERAL of these shirts for my husband who is a General Contractor who can never keep his shirts tucked in.  He's not super tall either, he's right at 6' but has a longer torso and I was hoping these shirts would be significantly longer than normal but they aren't.  But on the other hand, the quality is SUPERIOR!!!"}
+2015-12-02 12:54:43 [review] ERROR: {'item': u'B002GHC1DY', 'rate': u'5', 'time': u'December 1, 2015', 'user': u'A2HVKSIX1DABFC', 'text': u'Really like this shirts, they are heavy duty, the neck stays tight, and the pocket is a feature that I want.'}
+2015-12-02 12:54:43 [review] ERROR: {'item': u'B002GHC1DY', 'rate': u'5', 'time': u'November 30, 2015', 'user': u'A13AYKY9H5MW2T', 'text': u'What a great Shirt! Heavy weight thick cotton material.  Feels extremely durable (and a hair stiffer than a normal T-shirt).  Stitching heavyweight.  Pocket placement and size are as expected.  I own 4 of these in various colors (bought two initially, then two more since I was so impressed).  One of the few easy options for Tall sizes.'}
+2015-12-02 12:54:43 [review] ERROR: {'item': u'B002GHC1DY', 'rate': u'5', 'time': u'November 30, 2015', 'user': u'A1F3T0OJHZHYL', 'text': u'Husband loves these shirts!  Excellent quality, holds up better then any other tshirt available.  Little pricey but worth it.'}
+2015-12-02 12:54:43 [review] ERROR: {'item': u'B002GHC1DY', 'rate': u'5', 'time': u'November 30, 2015', 'user': u'AEJO3L307AEN0', 'text': u'Hubby loved them! It has become one of his favorites!'}
+2015-12-02 12:54:43 [review] ERROR: {'item': u'B002GHC1DY', 'rate': u'4', 'time': u'November 29, 2015', 'user': u'A38KK4LTT08ILZ', 'text': u'I thought these were made in the USA, these are made in Honduras. All of my other Carhartt gear is made in the USA. Not real happy with that.'}
+2015-12-02 12:54:43 [review] ERROR: {'item': u'B002GHC1DY', 'rate': u'5', 'time': u'November 28, 2015', 'user': u'A1CR83N7UG51M3', 'text': u'This is the best fitting T-shirt I have ever bought!'}
+2015-12-02 12:54:43 [review] ERROR: {'item': u'B002GHC1DY', 'rate': u'4', 'time': u'November 26, 2015', 'user': u'ABK7P654Y3GP6', 'text': u'Fit as expected'}
+2015-12-02 12:54:43 [review] ERROR: {'item': u'B002GHC1DY', 'rate': u'5', 'time': u'November 26, 2015', 'user': u'A36SG0XRKK81SE', 'text': u'Husband loved it!!'}
+2015-12-02 12:54:43 [scrapy] DEBUG: Crawled (200) <GET http://www.amazon.com/True-Religion-Skull-Black-XX-Large/dp/B0156N4DQW/ref=sr_1_18/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-18&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER> (referer: http://www.amazon.com/s/ref=sr_pg_1?rh=n%3A7141123011%2Cn%3A7147441011%2Cn%3A1040658%2Cn%3A2476517011%2Cn%3A1045624%2Cp_6%3AATVPDKIKX0DER&page=1&bbn=2476517011&ie=UTF8&qid=1448965490)
+2015-12-02 12:54:43 [scrapy] DEBUG: Crawled (200) <GET http://www.amazon.com/Original-Penguin-Shirt-Sapphire-Small/dp/B015MXK2IY/ref=sr_1_17/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-17&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER> (referer: http://www.amazon.com/s/ref=sr_pg_1?rh=n%3A7141123011%2Cn%3A7147441011%2Cn%3A1040658%2Cn%3A2476517011%2Cn%3A1045624%2Cp_6%3AATVPDKIKX0DER&page=1&bbn=2476517011&ie=UTF8&qid=1448965490)
+2015-12-02 12:54:43 [scrapy] DEBUG: Crawled (200) <GET http://www.amazon.com/Original-Penguin-Beard-Specs-Medium/dp/B015MXNYPW/ref=sr_1_16/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-16&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER> (referer: http://www.amazon.com/s/ref=sr_pg_1?rh=n%3A7141123011%2Cn%3A7147441011%2Cn%3A1040658%2Cn%3A2476517011%2Cn%3A1045624%2Cp_6%3AATVPDKIKX0DER&page=1&bbn=2476517011&ie=UTF8&qid=1448965490)
+2015-12-02 12:54:43 [scrapy] DEBUG: Crawled (200) <GET http://www.amazon.com/HUF-Crystal-Script-Forest-Small/dp/B015TCEKF4/ref=sr_1_15/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-15&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER> (referer: http://www.amazon.com/s/ref=sr_pg_1?rh=n%3A7141123011%2Cn%3A7147441011%2Cn%3A1040658%2Cn%3A2476517011%2Cn%3A1045624%2Cp_6%3AATVPDKIKX0DER&page=1&bbn=2476517011&ie=UTF8&qid=1448965490)
+2015-12-02 12:54:46 [scrapy] ERROR: Spider error processing <GET http://www.amazon.com/Dickies-Big-Tall-Heavyweight-Sleeve-XX-Large/dp/B00B6ED0YM/ref=sr_1_40/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-40&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER> (referer: http://www.amazon.com/s/ref=sr_pg_1?rh=n%3A7141123011%2Cn%3A7147441011%2Cn%3A1040658%2Cn%3A2476517011%2Cn%3A1045624%2Cp_6%3AATVPDKIKX0DER&page=1&bbn=2476517011&ie=UTF8&qid=1448965490)
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/spidermiddlewares/offsite.py", line 28, in process_spider_output
+    for x in result:
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/spidermiddlewares/depth.py", line 54, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/home/tao/Documents/amazon/amazon/spiders/review_spider.py", line 39, in parse_item_page
+    this_review_url_sel = Selector(response.read())
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/selector/unified.py", line 80, in __init__
+    _root = LxmlDocument(response, self._parser)
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/selector/lxmldocument.py", line 24, in __new__
+    cache = cls.cache.setdefault(response, {})
+  File "/usr/lib/python2.7/weakref.py", line 369, in setdefault
+    return self.data.setdefault(ref(key, self._remove),default)
+TypeError: cannot create weak reference to 'str' object
+2015-12-02 12:54:52 [scrapy] ERROR: Spider error processing <GET http://www.amazon.com/Carhartt-Workwear-Pocket-Midweight-Original/dp/B002GHC1KC/ref=sr_1_22/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-22&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER> (referer: http://www.amazon.com/s/ref=sr_pg_1?rh=n%3A7141123011%2Cn%3A7147441011%2Cn%3A1040658%2Cn%3A2476517011%2Cn%3A1045624%2Cp_6%3AATVPDKIKX0DER&page=1&bbn=2476517011&ie=UTF8&qid=1448965490)
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/spidermiddlewares/offsite.py", line 28, in process_spider_output
+    for x in result:
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/spidermiddlewares/depth.py", line 54, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/home/tao/Documents/amazon/amazon/spiders/review_spider.py", line 39, in parse_item_page
+    this_review_url_sel = Selector(response.read())
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/selector/unified.py", line 80, in __init__
+    _root = LxmlDocument(response, self._parser)
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/selector/lxmldocument.py", line 24, in __new__
+    cache = cls.cache.setdefault(response, {})
+  File "/usr/lib/python2.7/weakref.py", line 369, in setdefault
+    return self.data.setdefault(ref(key, self._remove),default)
+TypeError: cannot create weak reference to 'str' object
+2015-12-02 12:54:52 [scrapy] WARNING: Dropped: Missing price in {'item': u'B002GHC1DY',
+ 'rate': u'5',
+ 'text': u'Perfect',
+ 'time': u'December 1, 2015',
+ 'user': u'A19KR1KK3KFFX9'}
+{'item': u'B002GHC1DY',
+ 'rate': u'5',
+ 'text': u'Perfect',
+ 'time': u'December 1, 2015',
+ 'user': u'A19KR1KK3KFFX9'}
+2015-12-02 12:54:52 [scrapy] WARNING: Dropped: Missing price in {'item': u'B002GHC1DY',
+ 'rate': u'5',
+ 'text': u"Love the quality of these shirts, but they aren't as long as I had hoped.  I purchased SEVERAL of these shirts for my husband who is a General Contractor who can never keep his shirts tucked in.  He's not super tall either, he's right at 6' but has a longer torso and I was hoping these shirts would be significantly longer than normal but they aren't.  But on the other hand, the quality is SUPERIOR!!!",
+ 'time': u'December 1, 2015',
+ 'user': u'A2OFZ0PA2H7PHQ'}
+{'item': u'B002GHC1DY',
+ 'rate': u'5',
+ 'text': u"Love the quality of these shirts, but they aren't as long as I had hoped.  I purchased SEVERAL of these shirts for my husband who is a General Contractor who can never keep his shirts tucked in.  He's not super tall either, he's right at 6' but has a longer torso and I was hoping these shirts would be significantly longer than normal but they aren't.  But on the other hand, the quality is SUPERIOR!!!",
+ 'time': u'December 1, 2015',
+ 'user': u'A2OFZ0PA2H7PHQ'}
+2015-12-02 12:54:52 [scrapy] WARNING: Dropped: Missing price in {'item': u'B002GHC1DY',
+ 'rate': u'5',
+ 'text': u'Really like this shirts, they are heavy duty, the neck stays tight, and the pocket is a feature that I want.',
+ 'time': u'December 1, 2015',
+ 'user': u'A2HVKSIX1DABFC'}
+{'item': u'B002GHC1DY',
+ 'rate': u'5',
+ 'text': u'Really like this shirts, they are heavy duty, the neck stays tight, and the pocket is a feature that I want.',
+ 'time': u'December 1, 2015',
+ 'user': u'A2HVKSIX1DABFC'}
+2015-12-02 12:54:52 [scrapy] WARNING: Dropped: Missing price in {'item': u'B002GHC1DY',
+ 'rate': u'5',
+ 'text': u'What a great Shirt! Heavy weight thick cotton material.  Feels extremely durable (and a hair stiffer than a normal T-shirt).  Stitching heavyweight.  Pocket placement and size are as expected.  I own 4 of these in various colors (bought two initially, then two more since I was so impressed).  One of the few easy options for Tall sizes.',
+ 'time': u'November 30, 2015',
+ 'user': u'A13AYKY9H5MW2T'}
+{'item': u'B002GHC1DY',
+ 'rate': u'5',
+ 'text': u'What a great Shirt! Heavy weight thick cotton material.  Feels extremely durable (and a hair stiffer than a normal T-shirt).  Stitching heavyweight.  Pocket placement and size are as expected.  I own 4 of these in various colors (bought two initially, then two more since I was so impressed).  One of the few easy options for Tall sizes.',
+ 'time': u'November 30, 2015',
+ 'user': u'A13AYKY9H5MW2T'}
+2015-12-02 12:54:52 [scrapy] WARNING: Dropped: Missing price in {'item': u'B002GHC1DY',
+ 'rate': u'5',
+ 'text': u'Husband loves these shirts!  Excellent quality, holds up better then any other tshirt available.  Little pricey but worth it.',
+ 'time': u'November 30, 2015',
+ 'user': u'A1F3T0OJHZHYL'}
+{'item': u'B002GHC1DY',
+ 'rate': u'5',
+ 'text': u'Husband loves these shirts!  Excellent quality, holds up better then any other tshirt available.  Little pricey but worth it.',
+ 'time': u'November 30, 2015',
+ 'user': u'A1F3T0OJHZHYL'}
+2015-12-02 12:54:52 [scrapy] WARNING: Dropped: Missing price in {'item': u'B002GHC1DY',
+ 'rate': u'5',
+ 'text': u'Hubby loved them! It has become one of his favorites!',
+ 'time': u'November 30, 2015',
+ 'user': u'AEJO3L307AEN0'}
+{'item': u'B002GHC1DY',
+ 'rate': u'5',
+ 'text': u'Hubby loved them! It has become one of his favorites!',
+ 'time': u'November 30, 2015',
+ 'user': u'AEJO3L307AEN0'}
+2015-12-02 12:54:52 [scrapy] WARNING: Dropped: Missing price in {'item': u'B002GHC1DY',
+ 'rate': u'4',
+ 'text': u'I thought these were made in the USA, these are made in Honduras. All of my other Carhartt gear is made in the USA. Not real happy with that.',
+ 'time': u'November 29, 2015',
+ 'user': u'A38KK4LTT08ILZ'}
+{'item': u'B002GHC1DY',
+ 'rate': u'4',
+ 'text': u'I thought these were made in the USA, these are made in Honduras. All of my other Carhartt gear is made in the USA. Not real happy with that.',
+ 'time': u'November 29, 2015',
+ 'user': u'A38KK4LTT08ILZ'}
+2015-12-02 12:54:52 [scrapy] WARNING: Dropped: Missing price in {'item': u'B002GHC1DY',
+ 'rate': u'5',
+ 'text': u'This is the best fitting T-shirt I have ever bought!',
+ 'time': u'November 28, 2015',
+ 'user': u'A1CR83N7UG51M3'}
+{'item': u'B002GHC1DY',
+ 'rate': u'5',
+ 'text': u'This is the best fitting T-shirt I have ever bought!',
+ 'time': u'November 28, 2015',
+ 'user': u'A1CR83N7UG51M3'}
+2015-12-02 12:54:52 [scrapy] WARNING: Dropped: Missing price in {'item': u'B002GHC1DY',
+ 'rate': u'4',
+ 'text': u'Fit as expected',
+ 'time': u'November 26, 2015',
+ 'user': u'ABK7P654Y3GP6'}
+{'item': u'B002GHC1DY',
+ 'rate': u'4',
+ 'text': u'Fit as expected',
+ 'time': u'November 26, 2015',
+ 'user': u'ABK7P654Y3GP6'}
+2015-12-02 12:54:52 [scrapy] WARNING: Dropped: Missing price in {'item': u'B002GHC1DY',
+ 'rate': u'5',
+ 'text': u'Husband loved it!!',
+ 'time': u'November 26, 2015',
+ 'user': u'A36SG0XRKK81SE'}
+{'item': u'B002GHC1DY',
+ 'rate': u'5',
+ 'text': u'Husband loved it!!',
+ 'time': u'November 26, 2015',
+ 'user': u'A36SG0XRKK81SE'}
+2015-12-02 12:54:52 [scrapy] DEBUG: Crawled (200) <GET http://www.amazon.com/Akademiks-Big-Tall-Short-Sleeve-T-Shirt/product-reviews/B0153V0F50/ref=cm_cr_dp_see_all_btm?ie=UTF8&showViewpoints=1&sortBy=bySubmissionDateDescending> (referer: http://www.amazon.com/Akademiks-Big-Tall-Sleeve-T-Shirt-3X-Large/dp/B0153V19HI/ref=sr_1_45/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-45&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER)
+2015-12-02 12:54:52 [scrapy] DEBUG: Crawled (200) <GET http://www.amazon.com/Quiksilver-Mens-Logo-Sleeve-T-Shirt/product-reviews/B0100ZSI26/ref=cm_cr_dp_see_all_btm?ie=UTF8&showViewpoints=1&sortBy=bySubmissionDateDescending> (referer: http://www.amazon.com/Quiksilver-Sleeve-T-Shirt-Athletic-Heather/dp/B00Z7MH0F4/ref=sr_1_46/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-46&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER)
+2015-12-02 12:54:52 [scrapy] DEBUG: Crawled (200) <GET http://www.amazon.com/Quiksilver-Mens-Everyday-Logo-T-Shirt/product-reviews/B00QIKASJO/ref=cm_cr_dp_see_all_btm?ie=UTF8&showViewpoints=1&sortBy=bySubmissionDateDescending> (referer: http://www.amazon.com/Quiksilver-Everyday-T-Shirt-Federal-Medium/dp/B00V5WDYGY/ref=sr_1_43/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-43&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER)
+2015-12-02 12:54:52 [scrapy] DEBUG: Crawled (200) <GET http://www.amazon.com/HUF-Mens-Script-Heather-Large/dp/B015TCED0G/ref=sr_1_14/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-14&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER> (referer: http://www.amazon.com/s/ref=sr_pg_1?rh=n%3A7141123011%2Cn%3A7147441011%2Cn%3A1040658%2Cn%3A2476517011%2Cn%3A1045624%2Cp_6%3AATVPDKIKX0DER&page=1&bbn=2476517011&ie=UTF8&qid=1448965490)
+2015-12-02 12:54:56 [scrapy] ERROR: Spider error processing <GET http://www.amazon.com/Calvin-Klein-Short-Sleeve-Digital/dp/B016OY1YWI/ref=sr_1_20/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-20&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER> (referer: http://www.amazon.com/s/ref=sr_pg_1?rh=n%3A7141123011%2Cn%3A7147441011%2Cn%3A1040658%2Cn%3A2476517011%2Cn%3A1045624%2Cp_6%3AATVPDKIKX0DER&page=1&bbn=2476517011&ie=UTF8&qid=1448965490)
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/spidermiddlewares/offsite.py", line 28, in process_spider_output
+    for x in result:
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/spidermiddlewares/depth.py", line 54, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/home/tao/Documents/amazon/amazon/spiders/review_spider.py", line 39, in parse_item_page
+    this_review_url_sel = Selector(response.read())
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/selector/unified.py", line 80, in __init__
+    _root = LxmlDocument(response, self._parser)
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/selector/lxmldocument.py", line 24, in __new__
+    cache = cls.cache.setdefault(response, {})
+  File "/usr/lib/python2.7/weakref.py", line 369, in setdefault
+    return self.data.setdefault(ref(key, self._remove),default)
+TypeError: cannot create weak reference to 'str' object
+2015-12-02 12:54:56 [scrapy] DEBUG: Crawled (200) <GET http://www.amazon.com/Carhartt-Workwear-Midweight-Long-Sleeve-T-Shirt/product-reviews/B002G9U8ZA/ref=cm_cr_dp_see_all_btm?ie=UTF8&showViewpoints=1&sortBy=bySubmissionDateDescending> (referer: http://www.amazon.com/Carhartt-Workwear-Pocket-Midweight-Original/dp/B002GHC1KC/ref=sr_1_22/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-22&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER)
+2015-12-02 12:54:56 [scrapy] DEBUG: Crawled (200) <GET http://www.amazon.com/Dickies-Big-Tall-Heavyweight-Sleeve-Pocket/product-reviews/B00DIXXQRU/ref=cm_cr_dp_see_all_btm?ie=UTF8&showViewpoints=1&sortBy=bySubmissionDateDescending> (referer: http://www.amazon.com/Dickies-Big-Tall-Heavyweight-Sleeve-XX-Large/dp/B00B6ED0YM/ref=sr_1_40/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-40&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER)
+2015-12-02 12:54:56 [scrapy] DEBUG: Crawled (200) <GET http://www.amazon.com/Champion-Mens-Powertrain-Performance-T-Shirt/product-reviews/B00AKR3LG8/ref=cm_cr_dp_see_all_btm?ie=UTF8&showViewpoints=1&sortBy=bySubmissionDateDescending> (referer: http://www.amazon.com/Champion-Powertrain-Performance-T-Shirt-Granite/dp/B00CDJD5BM/ref=sr_1_42/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-42&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER)
+2015-12-02 12:54:56 [review] ERROR: Come in
+2015-12-02 12:54:56 [review] ERROR: reviews num :1
+2015-12-02 12:54:56 [review] ERROR: {'item': u'B0153V19HI', 'rate': u'5', 'time': u'October 29, 2015', 'user': u'A1MOA17DLGVYTA', 'text': u'Fits perfect. Nice material'}
+2015-12-02 12:54:56 [review] ERROR: Come in
+2015-12-02 12:54:56 [review] ERROR: reviews num :4
+2015-12-02 12:54:56 [review] ERROR: {'item': u'B00Z7MH0F4', 'rate': u'5', 'time': u'November 24, 2015', 'user': u'AM44A6QLADLIR', 'text': u'Fit as expected for my sun. Good fabric'}
+2015-12-02 12:54:56 [review] ERROR: {'item': u'B00Z7MH0F4', 'rate': u'4', 'time': u'November 6, 2015', 'user': u'A3KOUOTY1RSCZR', 'text': u'Nice simple shirt.  Good color'}
+2015-12-02 12:54:56 [review] ERROR: {'item': u'B00Z7MH0F4', 'rate': u'3', 'time': u'September 23, 2015', 'user': u'AWBQ0DDSHWIO6', 'text': u'The large was a bit too small but the extra large was a lot bigger than I had anticipated....still a nice shirt though.'}
+2015-12-02 12:54:56 [review] ERROR: {'item': u'B00Z7MH0F4', 'rate': u'5', 'time': u'August 16, 2015', 'user': u'A34DZYEL7YO3F8', 'text': u'Fits great, its a very nice long sleeve shirt I absolutely love the design on the left sleeve "Quick silver"'}
+2015-12-02 12:54:56 [review] ERROR: Come in
+2015-12-02 12:54:56 [review] ERROR: reviews num :10
+2015-12-02 12:54:56 [review] ERROR: {'item': u'B00V5WDYGY', 'rate': u'5', 'time': u'November 13, 2015', 'user': u'A34GG4NWK9NRY1', 'text': u'5 star'}
+2015-12-02 12:54:56 [review] ERROR: {'item': u'B00V5WDYGY', 'rate': u'5', 'time': u'November 4, 2015', 'user': u'A3QRXAA1LOJYRX', 'text': u'Perfect nice good quality t shirt'}
+2015-12-02 12:54:56 [review] ERROR: {'item': u'B00V5WDYGY', 'rate': u'5', 'time': u'November 4, 2015', 'user': u'A2ARMDAQJCL9FD', 'text': u'Quick delivery, fair price, well made clothes'}
+2015-12-02 12:54:56 [review] ERROR: {'item': u'B00V5WDYGY', 'rate': u'3', 'time': u'October 29, 2015', 'user': u'A2TNLWBJJGOCOF', 'text': u'I like it, BUT.......... I\'m a 5\'10" male weighing in at an athletic 200lbs. I usually wear an XL fine, however with this particular shirt the chest and arms fit as expected [this is where the BUT come in] the length was for someone at least 6\'6" tall.the fabric felt nice and the room in the chest area felt like a shirt I could easily wear all day. had it not been for the bottom going half way down my thighs I would probably be wearing it now and giving it 5stars.'}
+2015-12-02 12:54:56 [review] ERROR: {'item': u'B00V5WDYGY', 'rate': u'5', 'time': u'October 24, 2015', 'user': u'A1UJYO5K02OC9D', 'text': u'great t shirt, rinsed lightly with a laundry detergent that is not harsh and the color did not run , great fit'}
+2015-12-02 12:54:56 [review] ERROR: {'item': u'B00V5WDYGY', 'rate': u'5', 'time': u'October 23, 2015', 'user': u'A12OV9QKTPEI6S', 'text': u'Excellent T-Shirt from Quicksilver, very soft, made with good materials, fits perfectly and as expected.I have no complains at all... Recommended product!!!'}
+2015-12-02 12:54:56 [review] ERROR: {'item': u'B00V5WDYGY', 'rate': u'5', 'time': u'October 22, 2015', 'user': u'A2G3CXIEWKQ834', 'text': u"Nice and thick but still soft, hasn't faded. Fits."}
+2015-12-02 12:54:56 [review] ERROR: {'item': u'B00V5WDYGY', 'rate': u'4', 'time': u'October 21, 2015', 'user': u'A3SY5RV4XVG475', 'text': u'Bit tight on shoulders. Everything else is great'}
+2015-12-02 12:54:56 [review] ERROR: {'item': u'B00V5WDYGY', 'rate': u'5', 'time': u'October 20, 2015', 'user': u'A30AT7JDEV5BLN', 'text': u'Fits good! Material is good as well!'}
+2015-12-02 12:54:56 [review] ERROR: {'item': u'B00V5WDYGY', 'rate': u'5', 'time': u'October 20, 2015', 'user': u'A2SUIE7OHQ8FGX', 'text': u'Good product'}
+2015-12-02 12:54:56 [scrapy] DEBUG: Crawled (200) <GET http://www.amazon.com/HUF-Bunny-Pocket-Black-X-Large/dp/B015TCDIH0/ref=sr_1_10/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-10&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER> (referer: http://www.amazon.com/s/ref=sr_pg_1?rh=n%3A7141123011%2Cn%3A7147441011%2Cn%3A1040658%2Cn%3A2476517011%2Cn%3A1045624%2Cp_6%3AATVPDKIKX0DER&page=1&bbn=2476517011&ie=UTF8&qid=1448965490)
+2015-12-02 12:54:56 [scrapy] DEBUG: Crawled (200) <GET http://www.amazon.com/AG-Adriano-Goldschmied-Commute-Heather/dp/B012I14YN2/ref=sr_1_13/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-13&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER> (referer: http://www.amazon.com/s/ref=sr_pg_1?rh=n%3A7141123011%2Cn%3A7147441011%2Cn%3A1040658%2Cn%3A2476517011%2Cn%3A1045624%2Cp_6%3AATVPDKIKX0DER&page=1&bbn=2476517011&ie=UTF8&qid=1448965490)
+2015-12-02 12:54:56 [scrapy] DEBUG: Crawled (200) <GET http://www.amazon.com/Calvin-Klein-Sleeve-Pocket-T-Shirt/dp/B016OY8TVM/ref=sr_1_12/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-12&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER> (referer: http://www.amazon.com/s/ref=sr_pg_1?rh=n%3A7141123011%2Cn%3A7147441011%2Cn%3A1040658%2Cn%3A2476517011%2Cn%3A1045624%2Cp_6%3AATVPDKIKX0DER&page=1&bbn=2476517011&ie=UTF8&qid=1448965490)
+2015-12-02 12:54:56 [scrapy] DEBUG: Crawled (200) <GET http://www.amazon.com/HUF-Mens-Primary-Black-Medium/dp/B015TCERHU/ref=sr_1_11/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-11&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER> (referer: http://www.amazon.com/s/ref=sr_pg_1?rh=n%3A7141123011%2Cn%3A7147441011%2Cn%3A1040658%2Cn%3A2476517011%2Cn%3A1045624%2Cp_6%3AATVPDKIKX0DER&page=1&bbn=2476517011&ie=UTF8&qid=1448965490)
+2015-12-02 12:54:56 [scrapy] WARNING: Dropped: Missing price in {'item': u'B0153V19HI',
+ 'rate': u'5',
+ 'text': u'Fits perfect. Nice material',
+ 'time': u'October 29, 2015',
+ 'user': u'A1MOA17DLGVYTA'}
+{'item': u'B0153V19HI',
+ 'rate': u'5',
+ 'text': u'Fits perfect. Nice material',
+ 'time': u'October 29, 2015',
+ 'user': u'A1MOA17DLGVYTA'}
+2015-12-02 12:54:56 [scrapy] WARNING: Dropped: Missing price in {'item': u'B00Z7MH0F4',
+ 'rate': u'5',
+ 'text': u'Fit as expected for my sun. Good fabric',
+ 'time': u'November 24, 2015',
+ 'user': u'AM44A6QLADLIR'}
+{'item': u'B00Z7MH0F4',
+ 'rate': u'5',
+ 'text': u'Fit as expected for my sun. Good fabric',
+ 'time': u'November 24, 2015',
+ 'user': u'AM44A6QLADLIR'}
+2015-12-02 12:54:56 [scrapy] WARNING: Dropped: Missing price in {'item': u'B00Z7MH0F4',
+ 'rate': u'4',
+ 'text': u'Nice simple shirt.  Good color',
+ 'time': u'November 6, 2015',
+ 'user': u'A3KOUOTY1RSCZR'}
+{'item': u'B00Z7MH0F4',
+ 'rate': u'4',
+ 'text': u'Nice simple shirt.  Good color',
+ 'time': u'November 6, 2015',
+ 'user': u'A3KOUOTY1RSCZR'}
+2015-12-02 12:54:56 [scrapy] WARNING: Dropped: Missing price in {'item': u'B00Z7MH0F4',
+ 'rate': u'3',
+ 'text': u'The large was a bit too small but the extra large was a lot bigger than I had anticipated....still a nice shirt though.',
+ 'time': u'September 23, 2015',
+ 'user': u'AWBQ0DDSHWIO6'}
+{'item': u'B00Z7MH0F4',
+ 'rate': u'3',
+ 'text': u'The large was a bit too small but the extra large was a lot bigger than I had anticipated....still a nice shirt though.',
+ 'time': u'September 23, 2015',
+ 'user': u'AWBQ0DDSHWIO6'}
+2015-12-02 12:54:56 [scrapy] WARNING: Dropped: Missing price in {'item': u'B00Z7MH0F4',
+ 'rate': u'5',
+ 'text': u'Fits great, its a very nice long sleeve shirt I absolutely love the design on the left sleeve "Quick silver"',
+ 'time': u'August 16, 2015',
+ 'user': u'A34DZYEL7YO3F8'}
+{'item': u'B00Z7MH0F4',
+ 'rate': u'5',
+ 'text': u'Fits great, its a very nice long sleeve shirt I absolutely love the design on the left sleeve "Quick silver"',
+ 'time': u'August 16, 2015',
+ 'user': u'A34DZYEL7YO3F8'}
+2015-12-02 12:54:56 [scrapy] WARNING: Dropped: Missing price in {'item': u'B00V5WDYGY',
+ 'rate': u'5',
+ 'text': u'5 star',
+ 'time': u'November 13, 2015',
+ 'user': u'A34GG4NWK9NRY1'}
+{'item': u'B00V5WDYGY',
+ 'rate': u'5',
+ 'text': u'5 star',
+ 'time': u'November 13, 2015',
+ 'user': u'A34GG4NWK9NRY1'}
+2015-12-02 12:54:56 [scrapy] WARNING: Dropped: Missing price in {'item': u'B00V5WDYGY',
+ 'rate': u'5',
+ 'text': u'Perfect nice good quality t shirt',
+ 'time': u'November 4, 2015',
+ 'user': u'A3QRXAA1LOJYRX'}
+{'item': u'B00V5WDYGY',
+ 'rate': u'5',
+ 'text': u'Perfect nice good quality t shirt',
+ 'time': u'November 4, 2015',
+ 'user': u'A3QRXAA1LOJYRX'}
+2015-12-02 12:54:56 [scrapy] WARNING: Dropped: Missing price in {'item': u'B00V5WDYGY',
+ 'rate': u'5',
+ 'text': u'Quick delivery, fair price, well made clothes',
+ 'time': u'November 4, 2015',
+ 'user': u'A2ARMDAQJCL9FD'}
+{'item': u'B00V5WDYGY',
+ 'rate': u'5',
+ 'text': u'Quick delivery, fair price, well made clothes',
+ 'time': u'November 4, 2015',
+ 'user': u'A2ARMDAQJCL9FD'}
+2015-12-02 12:54:56 [scrapy] WARNING: Dropped: Missing price in {'item': u'B00V5WDYGY',
+ 'rate': u'3',
+ 'text': u'I like it, BUT.......... I\'m a 5\'10" male weighing in at an athletic 200lbs. I usually wear an XL fine, however with this particular shirt the chest and arms fit as expected [this is where the BUT come in] the length was for someone at least 6\'6" tall.the fabric felt nice and the room in the chest area felt like a shirt I could easily wear all day. had it not been for the bottom going half way down my thighs I would probably be wearing it now and giving it 5stars.',
+ 'time': u'October 29, 2015',
+ 'user': u'A2TNLWBJJGOCOF'}
+{'item': u'B00V5WDYGY',
+ 'rate': u'3',
+ 'text': u'I like it, BUT.......... I\'m a 5\'10" male weighing in at an athletic 200lbs. I usually wear an XL fine, however with this particular shirt the chest and arms fit as expected [this is where the BUT come in] the length was for someone at least 6\'6" tall.the fabric felt nice and the room in the chest area felt like a shirt I could easily wear all day. had it not been for the bottom going half way down my thighs I would probably be wearing it now and giving it 5stars.',
+ 'time': u'October 29, 2015',
+ 'user': u'A2TNLWBJJGOCOF'}
+2015-12-02 12:54:56 [scrapy] WARNING: Dropped: Missing price in {'item': u'B00V5WDYGY',
+ 'rate': u'5',
+ 'text': u'great t shirt, rinsed lightly with a laundry detergent that is not harsh and the color did not run , great fit',
+ 'time': u'October 24, 2015',
+ 'user': u'A1UJYO5K02OC9D'}
+{'item': u'B00V5WDYGY',
+ 'rate': u'5',
+ 'text': u'great t shirt, rinsed lightly with a laundry detergent that is not harsh and the color did not run , great fit',
+ 'time': u'October 24, 2015',
+ 'user': u'A1UJYO5K02OC9D'}
+2015-12-02 12:54:56 [scrapy] WARNING: Dropped: Missing price in {'item': u'B00V5WDYGY',
+ 'rate': u'5',
+ 'text': u'Excellent T-Shirt from Quicksilver, very soft, made with good materials, fits perfectly and as expected.I have no complains at all... Recommended product!!!',
+ 'time': u'October 23, 2015',
+ 'user': u'A12OV9QKTPEI6S'}
+{'item': u'B00V5WDYGY',
+ 'rate': u'5',
+ 'text': u'Excellent T-Shirt from Quicksilver, very soft, made with good materials, fits perfectly and as expected.I have no complains at all... Recommended product!!!',
+ 'time': u'October 23, 2015',
+ 'user': u'A12OV9QKTPEI6S'}
+2015-12-02 12:54:56 [scrapy] WARNING: Dropped: Missing price in {'item': u'B00V5WDYGY',
+ 'rate': u'5',
+ 'text': u"Nice and thick but still soft, hasn't faded. Fits.",
+ 'time': u'October 22, 2015',
+ 'user': u'A2G3CXIEWKQ834'}
+{'item': u'B00V5WDYGY',
+ 'rate': u'5',
+ 'text': u"Nice and thick but still soft, hasn't faded. Fits.",
+ 'time': u'October 22, 2015',
+ 'user': u'A2G3CXIEWKQ834'}
+2015-12-02 12:54:56 [scrapy] WARNING: Dropped: Missing price in {'item': u'B00V5WDYGY',
+ 'rate': u'4',
+ 'text': u'Bit tight on shoulders. Everything else is great',
+ 'time': u'October 21, 2015',
+ 'user': u'A3SY5RV4XVG475'}
+{'item': u'B00V5WDYGY',
+ 'rate': u'4',
+ 'text': u'Bit tight on shoulders. Everything else is great',
+ 'time': u'October 21, 2015',
+ 'user': u'A3SY5RV4XVG475'}
+2015-12-02 12:54:56 [scrapy] WARNING: Dropped: Missing price in {'item': u'B00V5WDYGY',
+ 'rate': u'5',
+ 'text': u'Fits good! Material is good as well!',
+ 'time': u'October 20, 2015',
+ 'user': u'A30AT7JDEV5BLN'}
+{'item': u'B00V5WDYGY',
+ 'rate': u'5',
+ 'text': u'Fits good! Material is good as well!',
+ 'time': u'October 20, 2015',
+ 'user': u'A30AT7JDEV5BLN'}
+2015-12-02 12:54:56 [scrapy] WARNING: Dropped: Missing price in {'item': u'B00V5WDYGY',
+ 'rate': u'5',
+ 'text': u'Good product',
+ 'time': u'October 20, 2015',
+ 'user': u'A2SUIE7OHQ8FGX'}
+{'item': u'B00V5WDYGY',
+ 'rate': u'5',
+ 'text': u'Good product',
+ 'time': u'October 20, 2015',
+ 'user': u'A2SUIE7OHQ8FGX'}
+2015-12-02 12:54:56 [review] ERROR: Come in
+2015-12-02 12:54:56 [review] ERROR: reviews num :10
+2015-12-02 12:54:56 [review] ERROR: {'item': u'B002GHC1KC', 'rate': u'4', 'time': u'December 1, 2015', 'user': u'A381PONLZCA8I6', 'text': u'The Carhartt shirt is nice but was a little thinner than some of the other Carhartt shirts that I have. I reckon a different weight. If you wear a 2XL buy a XL. They run a little large. Nice shirt, I just wanted one a little thicker.'}
+2015-12-02 12:54:56 [review] ERROR: {'item': u'B002GHC1KC', 'rate': u'5', 'time': u'December 1, 2015', 'user': u'ALMOSKCI3EGGF', 'text': u'great shirt , runs big'}
+2015-12-02 12:54:56 [review] ERROR: {'item': u'B002GHC1KC', 'rate': u'5', 'time': u'November 27, 2015', 'user': u'A3EK2K7SN9G4VO', 'text': u'Great shirt'}
+2015-12-02 12:54:56 [review] ERROR: {'item': u'B002GHC1KC', 'rate': u'4', 'time': u'November 26, 2015', 'user': u'A30X14ZOADC4PA', 'text': u'The shirt fits about as well as I expected and I have received several compliments on how the shirt looks on me.'}
+2015-12-02 12:54:56 [review] ERROR: {'item': u'B002GHC1KC', 'rate': u'5', 'time': u'November 25, 2015', 'user': u'A1OHJ2WWHWZ4I6', 'text': u'I love the shirts. They are made out of fairly heavy material and will last a long time. I am 6\'3" 195 lbs.. The first two I ordered several months ago in large tall, due to the reviews here saying they run long and large. That turned out to be true. I would normally order at least x-large tall but these fit just fine. I decided to order two more in different colors last week and the large tall were no longer available. I went ahead and ordered the regular Large but not in tall. I really can\'t see a lot of difference in the large/tall and the large/regular. The regular are also long in the sleeves and the body just like the Tall size. Unless you are the Jolly Green Giant don\'t worry about these shirts being long enough in the body and sleeves. Regular Large fits me well where I would normally require x-large tall in any other shirt. The Talls are really almost too long so regular is fine.'}
+2015-12-02 12:54:56 [review] ERROR: {'item': u'B002GHC1KC', 'rate': u'4', 'time': u'November 24, 2015', 'user': u'A2OTV56M2BW3ND', 'text': u'Shrunk a little in the wash. But still a little big for a medium.'}
+2015-12-02 12:54:56 [review] ERROR: {'item': u'B002GHC1KC', 'rate': u'5', 'time': u'November 24, 2015', 'user': u'A55M9X2JKPJFT', 'text': u'Better than shopping, delivered to the door for free.....awesome experience....'}
+2015-12-02 12:54:56 [review] ERROR: {'item': u'B002GHC1KC', 'rate': u'5', 'time': u'November 22, 2015', 'user': u'A2Z7QFZ3BMZCGB', 'text': u'Perfecto as always!!!'}
+2015-12-02 12:54:56 [review] ERROR: {'item': u'B002GHC1KC', 'rate': u'5', 'time': u'November 22, 2015', 'user': u'A14GSW30T7TJCC', 'text': u"Comfy, good fit, quality fabric and construction.  You can't go wrong with Carhartt."}
+2015-12-02 12:54:56 [review] ERROR: {'item': u'B002GHC1KC', 'rate': u'5', 'time': u'November 21, 2015', 'user': u'A1B8PW3586KLXO', 'text': u"Well built shirt....nice and heavy....wish elastic in sleeves was more elastic (forgetful)....slide them up over your elbows for a few hours and when ya slide them down they aren't so forgetful.  Kinda sucks....short sleeve would be great."}
+2015-12-02 12:54:56 [review] ERROR: Come in
+2015-12-02 12:54:56 [review] ERROR: reviews num :10
+2015-12-02 12:54:56 [review] ERROR: {'item': u'B00B6ED0YM', 'rate': u'5', 'time': u'December 1, 2015', 'user': u'A2YIJZEI94QJTX', 'text': u'It has a pocket!'}
+2015-12-02 12:54:56 [review] ERROR: {'item': u'B00B6ED0YM', 'rate': u'5', 'time': u'December 1, 2015', 'user': u'APJ0BQH8VDCS0', 'text': u"Bam! High-quality, low price, great fit, long enough to tuck or wear out. I'm going to be buying more of these in various colors. I bought the long-sleeve version too. Both were excellent!"}
+2015-12-02 12:54:56 [review] ERROR: {'item': u'B00B6ED0YM', 'rate': u'5', 'time': u'December 1, 2015', 'user': u'A1UKNIHO5YOKXT', 'text': u'Amazing to find a shirt that my 6\'3" 300 lb. husband can lift his hands above his head and not show his belly. Great quality for the price as well.'}
+2015-12-02 12:54:56 [review] ERROR: {'item': u'B00B6ED0YM', 'rate': u'5', 'time': u'November 29, 2015', 'user': u'A1U7ELMCZ0LR2C', 'text': u'good'}
+2015-12-02 12:54:56 [review] ERROR: {'item': u'B00B6ED0YM', 'rate': u'5', 'time': u'November 27, 2015', 'user': u'A3KC2AMHLU9SDQ', 'text': u"Higher quality than other Dickie's pocket T's.  The added length is just right.  The added thickness is great, wears great in Florida on days when the humidity is below 90%."}
+2015-12-02 12:54:56 [review] ERROR: {'item': u'B00B6ED0YM', 'rate': u'5', 'time': u'November 26, 2015', 'user': u'A20OCK17SAWC7Q', 'text': u'I am 6\'4", 250lbs and the 2XLT fits me perfectly (roomy, not sloppy). Great quality.'}
+2015-12-02 12:54:56 [review] ERROR: {'item': u'B00B6ED0YM', 'rate': u'4', 'time': u'November 26, 2015', 'user': u'A1GQ72JRSG6ND5', 'text': u'Nice heavyweight shirt, uncomfortable around my neck though.'}
+2015-12-02 12:54:56 [review] ERROR: {'item': u'B00B6ED0YM', 'rate': u'5', 'time': u'November 26, 2015', 'user': u'A1E8FB8ZSBQZ71', 'text': u'finally a shirt for guys that are tall but not fat. Got a tall large very nice'}
+2015-12-02 12:54:56 [review] ERROR: {'item': u'B00B6ED0YM', 'rate': u'3', 'time': u'November 24, 2015', 'user': u'A2KHPVJEVY1U7N', 'text': u'was short for a tall'}
+2015-12-02 12:54:56 [review] ERROR: {'item': u'B00B6ED0YM', 'rate': u'5', 'time': u'November 23, 2015', 'user': u'A2N81363QNLZ1Z', 'text': u'Excellent shirt'}
+2015-12-02 12:54:56 [review] ERROR: Come in
+2015-12-02 12:54:56 [review] ERROR: reviews num :10
+2015-12-02 12:54:56 [review] ERROR: {'item': u'B00CDJD5BM', 'rate': u'5', 'time': u'December 1, 2015', 'user': u'A3LV42NBFM829N', 'text': u'good'}
+2015-12-02 12:54:56 [review] ERROR: {'item': u'B00CDJD5BM', 'rate': u'5', 'time': u'November 29, 2015', 'user': u'A2KP9AXP7BUF6W', 'text': u'I love these shirts. The fit is as expected and they do not shrink. Great athletic shirt. East to move in'}
+2015-12-02 12:54:56 [review] ERROR: {'item': u'B00CDJD5BM', 'rate': u'5', 'time': u'November 27, 2015', 'user': u'A3N43F8K7NO64W', 'text': u'Great workout shirt. It absorbs your sweat very fast and evaporates it very fast too.'}
+2015-12-02 12:54:56 [review] ERROR: {'item': u'B00CDJD5BM', 'rate': u'5', 'time': u'November 26, 2015', 'user': u'A1KHY9UEWYZHI6', 'text': u"Excellent fit. Feels extremely light on the body. Doesn't absorb any sweat."}
+2015-12-02 12:54:56 [review] ERROR: {'item': u'B00CDJD5BM', 'rate': u'5', 'time': u'November 26, 2015', 'user': u'A2TXCLY1Q3YKC', 'text': u'excellent'}
+2015-12-02 12:54:56 [review] ERROR: {'item': u'B00CDJD5BM', 'rate': u'5', 'time': u'November 26, 2015', 'user': u'A2CQ9KZN67ETBF', 'text': u'What can I really say? I normally wear size large shirts, I ordered a large, and it fits just right'}
+2015-12-02 12:54:56 [review] ERROR: {'item': u'B00CDJD5BM', 'rate': u'5', 'time': u'November 26, 2015', 'user': u'AWUGBUSY1IO1Y', 'text': u'Good value for exercise wear ... breathes well, fits well, and looks good.'}
+2015-12-02 12:54:56 [review] ERROR: {'item': u'B00CDJD5BM', 'rate': u'4', 'time': u'November 26, 2015', 'user': u'A3ENV89EXPVT1Y', 'text': u'Its okay'}
+2015-12-02 12:54:56 [review] ERROR: {'item': u'B00CDJD5BM', 'rate': u'5', 'time': u'November 25, 2015', 'user': u'A2Q2J1E7U8Z5OS', 'text': u'Great material, sized to fit those with shorter torsos, and a tremendous buy!'}
+2015-12-02 12:54:56 [review] ERROR: {'item': u'B00CDJD5BM', 'rate': u'5', 'time': u'November 25, 2015', 'user': u'AEYLEGSVCGIJP', 'text': u'Good fit!'}
+2015-12-02 12:54:56 [scrapy] WARNING: Dropped: Missing price in {'item': u'B002GHC1KC',
+ 'rate': u'4',
+ 'text': u'The Carhartt shirt is nice but was a little thinner than some of the other Carhartt shirts that I have. I reckon a different weight. If you wear a 2XL buy a XL. They run a little large. Nice shirt, I just wanted one a little thicker.',
+ 'time': u'December 1, 2015',
+ 'user': u'A381PONLZCA8I6'}
+{'item': u'B002GHC1KC',
+ 'rate': u'4',
+ 'text': u'The Carhartt shirt is nice but was a little thinner than some of the other Carhartt shirts that I have. I reckon a different weight. If you wear a 2XL buy a XL. They run a little large. Nice shirt, I just wanted one a little thicker.',
+ 'time': u'December 1, 2015',
+ 'user': u'A381PONLZCA8I6'}
+2015-12-02 12:54:56 [scrapy] WARNING: Dropped: Missing price in {'item': u'B002GHC1KC',
+ 'rate': u'5',
+ 'text': u'great shirt , runs big',
+ 'time': u'December 1, 2015',
+ 'user': u'ALMOSKCI3EGGF'}
+{'item': u'B002GHC1KC',
+ 'rate': u'5',
+ 'text': u'great shirt , runs big',
+ 'time': u'December 1, 2015',
+ 'user': u'ALMOSKCI3EGGF'}
+2015-12-02 12:54:56 [scrapy] WARNING: Dropped: Missing price in {'item': u'B002GHC1KC',
+ 'rate': u'5',
+ 'text': u'Great shirt',
+ 'time': u'November 27, 2015',
+ 'user': u'A3EK2K7SN9G4VO'}
+{'item': u'B002GHC1KC',
+ 'rate': u'5',
+ 'text': u'Great shirt',
+ 'time': u'November 27, 2015',
+ 'user': u'A3EK2K7SN9G4VO'}
+2015-12-02 12:54:56 [scrapy] WARNING: Dropped: Missing price in {'item': u'B002GHC1KC',
+ 'rate': u'4',
+ 'text': u'The shirt fits about as well as I expected and I have received several compliments on how the shirt looks on me.',
+ 'time': u'November 26, 2015',
+ 'user': u'A30X14ZOADC4PA'}
+{'item': u'B002GHC1KC',
+ 'rate': u'4',
+ 'text': u'The shirt fits about as well as I expected and I have received several compliments on how the shirt looks on me.',
+ 'time': u'November 26, 2015',
+ 'user': u'A30X14ZOADC4PA'}
+2015-12-02 12:54:56 [scrapy] WARNING: Dropped: Missing price in {'item': u'B002GHC1KC',
+ 'rate': u'5',
+ 'text': u'I love the shirts. They are made out of fairly heavy material and will last a long time. I am 6\'3" 195 lbs.. The first two I ordered several months ago in large tall, due to the reviews here saying they run long and large. That turned out to be true. I would normally order at least x-large tall but these fit just fine. I decided to order two more in different colors last week and the large tall were no longer available. I went ahead and ordered the regular Large but not in tall. I really can\'t see a lot of difference in the large/tall and the large/regular. The regular are also long in the sleeves and the body just like the Tall size. Unless you are the Jolly Green Giant don\'t worry about these shirts being long enough in the body and sleeves. Regular Large fits me well where I would normally require x-large tall in any other shirt. The Talls are really almost too long so regular is fine.',
+ 'time': u'November 25, 2015',
+ 'user': u'A1OHJ2WWHWZ4I6'}
+{'item': u'B002GHC1KC',
+ 'rate': u'5',
+ 'text': u'I love the shirts. They are made out of fairly heavy material and will last a long time. I am 6\'3" 195 lbs.. The first two I ordered several months ago in large tall, due to the reviews here saying they run long and large. That turned out to be true. I would normally order at least x-large tall but these fit just fine. I decided to order two more in different colors last week and the large tall were no longer available. I went ahead and ordered the regular Large but not in tall. I really can\'t see a lot of difference in the large/tall and the large/regular. The regular are also long in the sleeves and the body just like the Tall size. Unless you are the Jolly Green Giant don\'t worry about these shirts being long enough in the body and sleeves. Regular Large fits me well where I would normally require x-large tall in any other shirt. The Talls are really almost too long so regular is fine.',
+ 'time': u'November 25, 2015',
+ 'user': u'A1OHJ2WWHWZ4I6'}
+2015-12-02 12:54:56 [scrapy] WARNING: Dropped: Missing price in {'item': u'B002GHC1KC',
+ 'rate': u'4',
+ 'text': u'Shrunk a little in the wash. But still a little big for a medium.',
+ 'time': u'November 24, 2015',
+ 'user': u'A2OTV56M2BW3ND'}
+{'item': u'B002GHC1KC',
+ 'rate': u'4',
+ 'text': u'Shrunk a little in the wash. But still a little big for a medium.',
+ 'time': u'November 24, 2015',
+ 'user': u'A2OTV56M2BW3ND'}
+2015-12-02 12:54:56 [scrapy] WARNING: Dropped: Missing price in {'item': u'B002GHC1KC',
+ 'rate': u'5',
+ 'text': u'Better than shopping, delivered to the door for free.....awesome experience....',
+ 'time': u'November 24, 2015',
+ 'user': u'A55M9X2JKPJFT'}
+{'item': u'B002GHC1KC',
+ 'rate': u'5',
+ 'text': u'Better than shopping, delivered to the door for free.....awesome experience....',
+ 'time': u'November 24, 2015',
+ 'user': u'A55M9X2JKPJFT'}
+2015-12-02 12:54:56 [scrapy] WARNING: Dropped: Missing price in {'item': u'B002GHC1KC',
+ 'rate': u'5',
+ 'text': u'Perfecto as always!!!',
+ 'time': u'November 22, 2015',
+ 'user': u'A2Z7QFZ3BMZCGB'}
+{'item': u'B002GHC1KC',
+ 'rate': u'5',
+ 'text': u'Perfecto as always!!!',
+ 'time': u'November 22, 2015',
+ 'user': u'A2Z7QFZ3BMZCGB'}
+2015-12-02 12:54:56 [scrapy] WARNING: Dropped: Missing price in {'item': u'B002GHC1KC',
+ 'rate': u'5',
+ 'text': u"Comfy, good fit, quality fabric and construction.  You can't go wrong with Carhartt.",
+ 'time': u'November 22, 2015',
+ 'user': u'A14GSW30T7TJCC'}
+{'item': u'B002GHC1KC',
+ 'rate': u'5',
+ 'text': u"Comfy, good fit, quality fabric and construction.  You can't go wrong with Carhartt.",
+ 'time': u'November 22, 2015',
+ 'user': u'A14GSW30T7TJCC'}
+2015-12-02 12:54:56 [scrapy] WARNING: Dropped: Missing price in {'item': u'B002GHC1KC',
+ 'rate': u'5',
+ 'text': u"Well built shirt....nice and heavy....wish elastic in sleeves was more elastic (forgetful)....slide them up over your elbows for a few hours and when ya slide them down they aren't so forgetful.  Kinda sucks....short sleeve would be great.",
+ 'time': u'November 21, 2015',
+ 'user': u'A1B8PW3586KLXO'}
+{'item': u'B002GHC1KC',
+ 'rate': u'5',
+ 'text': u"Well built shirt....nice and heavy....wish elastic in sleeves was more elastic (forgetful)....slide them up over your elbows for a few hours and when ya slide them down they aren't so forgetful.  Kinda sucks....short sleeve would be great.",
+ 'time': u'November 21, 2015',
+ 'user': u'A1B8PW3586KLXO'}
+2015-12-02 12:54:56 [scrapy] WARNING: Dropped: Missing price in {'item': u'B00B6ED0YM',
+ 'rate': u'5',
+ 'text': u'It has a pocket!',
+ 'time': u'December 1, 2015',
+ 'user': u'A2YIJZEI94QJTX'}
+{'item': u'B00B6ED0YM',
+ 'rate': u'5',
+ 'text': u'It has a pocket!',
+ 'time': u'December 1, 2015',
+ 'user': u'A2YIJZEI94QJTX'}
+2015-12-02 12:54:56 [scrapy] WARNING: Dropped: Missing price in {'item': u'B00B6ED0YM',
+ 'rate': u'5',
+ 'text': u"Bam! High-quality, low price, great fit, long enough to tuck or wear out. I'm going to be buying more of these in various colors. I bought the long-sleeve version too. Both were excellent!",
+ 'time': u'December 1, 2015',
+ 'user': u'APJ0BQH8VDCS0'}
+{'item': u'B00B6ED0YM',
+ 'rate': u'5',
+ 'text': u"Bam! High-quality, low price, great fit, long enough to tuck or wear out. I'm going to be buying more of these in various colors. I bought the long-sleeve version too. Both were excellent!",
+ 'time': u'December 1, 2015',
+ 'user': u'APJ0BQH8VDCS0'}
+2015-12-02 12:54:56 [scrapy] WARNING: Dropped: Missing price in {'item': u'B00B6ED0YM',
+ 'rate': u'5',
+ 'text': u'Amazing to find a shirt that my 6\'3" 300 lb. husband can lift his hands above his head and not show his belly. Great quality for the price as well.',
+ 'time': u'December 1, 2015',
+ 'user': u'A1UKNIHO5YOKXT'}
+{'item': u'B00B6ED0YM',
+ 'rate': u'5',
+ 'text': u'Amazing to find a shirt that my 6\'3" 300 lb. husband can lift his hands above his head and not show his belly. Great quality for the price as well.',
+ 'time': u'December 1, 2015',
+ 'user': u'A1UKNIHO5YOKXT'}
+2015-12-02 12:54:56 [scrapy] WARNING: Dropped: Missing price in {'item': u'B00B6ED0YM',
+ 'rate': u'5',
+ 'text': u'good',
+ 'time': u'November 29, 2015',
+ 'user': u'A1U7ELMCZ0LR2C'}
+{'item': u'B00B6ED0YM',
+ 'rate': u'5',
+ 'text': u'good',
+ 'time': u'November 29, 2015',
+ 'user': u'A1U7ELMCZ0LR2C'}
+2015-12-02 12:54:56 [scrapy] WARNING: Dropped: Missing price in {'item': u'B00B6ED0YM',
+ 'rate': u'5',
+ 'text': u"Higher quality than other Dickie's pocket T's.  The added length is just right.  The added thickness is great, wears great in Florida on days when the humidity is below 90%.",
+ 'time': u'November 27, 2015',
+ 'user': u'A3KC2AMHLU9SDQ'}
+{'item': u'B00B6ED0YM',
+ 'rate': u'5',
+ 'text': u"Higher quality than other Dickie's pocket T's.  The added length is just right.  The added thickness is great, wears great in Florida on days when the humidity is below 90%.",
+ 'time': u'November 27, 2015',
+ 'user': u'A3KC2AMHLU9SDQ'}
+2015-12-02 12:54:56 [scrapy] WARNING: Dropped: Missing price in {'item': u'B00B6ED0YM',
+ 'rate': u'5',
+ 'text': u'I am 6\'4", 250lbs and the 2XLT fits me perfectly (roomy, not sloppy). Great quality.',
+ 'time': u'November 26, 2015',
+ 'user': u'A20OCK17SAWC7Q'}
+{'item': u'B00B6ED0YM',
+ 'rate': u'5',
+ 'text': u'I am 6\'4", 250lbs and the 2XLT fits me perfectly (roomy, not sloppy). Great quality.',
+ 'time': u'November 26, 2015',
+ 'user': u'A20OCK17SAWC7Q'}
+2015-12-02 12:54:56 [scrapy] WARNING: Dropped: Missing price in {'item': u'B00B6ED0YM',
+ 'rate': u'4',
+ 'text': u'Nice heavyweight shirt, uncomfortable around my neck though.',
+ 'time': u'November 26, 2015',
+ 'user': u'A1GQ72JRSG6ND5'}
+{'item': u'B00B6ED0YM',
+ 'rate': u'4',
+ 'text': u'Nice heavyweight shirt, uncomfortable around my neck though.',
+ 'time': u'November 26, 2015',
+ 'user': u'A1GQ72JRSG6ND5'}
+2015-12-02 12:54:56 [scrapy] WARNING: Dropped: Missing price in {'item': u'B00B6ED0YM',
+ 'rate': u'5',
+ 'text': u'finally a shirt for guys that are tall but not fat. Got a tall large very nice',
+ 'time': u'November 26, 2015',
+ 'user': u'A1E8FB8ZSBQZ71'}
+{'item': u'B00B6ED0YM',
+ 'rate': u'5',
+ 'text': u'finally a shirt for guys that are tall but not fat. Got a tall large very nice',
+ 'time': u'November 26, 2015',
+ 'user': u'A1E8FB8ZSBQZ71'}
+2015-12-02 12:54:56 [scrapy] WARNING: Dropped: Missing price in {'item': u'B00B6ED0YM',
+ 'rate': u'3',
+ 'text': u'was short for a tall',
+ 'time': u'November 24, 2015',
+ 'user': u'A2KHPVJEVY1U7N'}
+{'item': u'B00B6ED0YM',
+ 'rate': u'3',
+ 'text': u'was short for a tall',
+ 'time': u'November 24, 2015',
+ 'user': u'A2KHPVJEVY1U7N'}
+2015-12-02 12:54:56 [scrapy] WARNING: Dropped: Missing price in {'item': u'B00B6ED0YM',
+ 'rate': u'5',
+ 'text': u'Excellent shirt',
+ 'time': u'November 23, 2015',
+ 'user': u'A2N81363QNLZ1Z'}
+{'item': u'B00B6ED0YM',
+ 'rate': u'5',
+ 'text': u'Excellent shirt',
+ 'time': u'November 23, 2015',
+ 'user': u'A2N81363QNLZ1Z'}
+2015-12-02 12:54:56 [scrapy] WARNING: Dropped: Missing price in {'item': u'B00CDJD5BM',
+ 'rate': u'5',
+ 'text': u'good',
+ 'time': u'December 1, 2015',
+ 'user': u'A3LV42NBFM829N'}
+{'item': u'B00CDJD5BM',
+ 'rate': u'5',
+ 'text': u'good',
+ 'time': u'December 1, 2015',
+ 'user': u'A3LV42NBFM829N'}
+2015-12-02 12:54:56 [scrapy] WARNING: Dropped: Missing price in {'item': u'B00CDJD5BM',
+ 'rate': u'5',
+ 'text': u'I love these shirts. The fit is as expected and they do not shrink. Great athletic shirt. East to move in',
+ 'time': u'November 29, 2015',
+ 'user': u'A2KP9AXP7BUF6W'}
+{'item': u'B00CDJD5BM',
+ 'rate': u'5',
+ 'text': u'I love these shirts. The fit is as expected and they do not shrink. Great athletic shirt. East to move in',
+ 'time': u'November 29, 2015',
+ 'user': u'A2KP9AXP7BUF6W'}
+2015-12-02 12:54:56 [scrapy] WARNING: Dropped: Missing price in {'item': u'B00CDJD5BM',
+ 'rate': u'5',
+ 'text': u'Great workout shirt. It absorbs your sweat very fast and evaporates it very fast too.',
+ 'time': u'November 27, 2015',
+ 'user': u'A3N43F8K7NO64W'}
+{'item': u'B00CDJD5BM',
+ 'rate': u'5',
+ 'text': u'Great workout shirt. It absorbs your sweat very fast and evaporates it very fast too.',
+ 'time': u'November 27, 2015',
+ 'user': u'A3N43F8K7NO64W'}
+2015-12-02 12:54:56 [scrapy] WARNING: Dropped: Missing price in {'item': u'B00CDJD5BM',
+ 'rate': u'5',
+ 'text': u"Excellent fit. Feels extremely light on the body. Doesn't absorb any sweat.",
+ 'time': u'November 26, 2015',
+ 'user': u'A1KHY9UEWYZHI6'}
+{'item': u'B00CDJD5BM',
+ 'rate': u'5',
+ 'text': u"Excellent fit. Feels extremely light on the body. Doesn't absorb any sweat.",
+ 'time': u'November 26, 2015',
+ 'user': u'A1KHY9UEWYZHI6'}
+2015-12-02 12:54:56 [scrapy] WARNING: Dropped: Missing price in {'item': u'B00CDJD5BM',
+ 'rate': u'5',
+ 'text': u'excellent',
+ 'time': u'November 26, 2015',
+ 'user': u'A2TXCLY1Q3YKC'}
+{'item': u'B00CDJD5BM',
+ 'rate': u'5',
+ 'text': u'excellent',
+ 'time': u'November 26, 2015',
+ 'user': u'A2TXCLY1Q3YKC'}
+2015-12-02 12:54:56 [scrapy] WARNING: Dropped: Missing price in {'item': u'B00CDJD5BM',
+ 'rate': u'5',
+ 'text': u'What can I really say? I normally wear size large shirts, I ordered a large, and it fits just right',
+ 'time': u'November 26, 2015',
+ 'user': u'A2CQ9KZN67ETBF'}
+{'item': u'B00CDJD5BM',
+ 'rate': u'5',
+ 'text': u'What can I really say? I normally wear size large shirts, I ordered a large, and it fits just right',
+ 'time': u'November 26, 2015',
+ 'user': u'A2CQ9KZN67ETBF'}
+2015-12-02 12:54:56 [scrapy] WARNING: Dropped: Missing price in {'item': u'B00CDJD5BM',
+ 'rate': u'5',
+ 'text': u'Good value for exercise wear ... breathes well, fits well, and looks good.',
+ 'time': u'November 26, 2015',
+ 'user': u'AWUGBUSY1IO1Y'}
+{'item': u'B00CDJD5BM',
+ 'rate': u'5',
+ 'text': u'Good value for exercise wear ... breathes well, fits well, and looks good.',
+ 'time': u'November 26, 2015',
+ 'user': u'AWUGBUSY1IO1Y'}
+2015-12-02 12:54:56 [scrapy] WARNING: Dropped: Missing price in {'item': u'B00CDJD5BM',
+ 'rate': u'4',
+ 'text': u'Its okay',
+ 'time': u'November 26, 2015',
+ 'user': u'A3ENV89EXPVT1Y'}
+{'item': u'B00CDJD5BM',
+ 'rate': u'4',
+ 'text': u'Its okay',
+ 'time': u'November 26, 2015',
+ 'user': u'A3ENV89EXPVT1Y'}
+2015-12-02 12:54:56 [scrapy] WARNING: Dropped: Missing price in {'item': u'B00CDJD5BM',
+ 'rate': u'5',
+ 'text': u'Great material, sized to fit those with shorter torsos, and a tremendous buy!',
+ 'time': u'November 25, 2015',
+ 'user': u'A2Q2J1E7U8Z5OS'}
+{'item': u'B00CDJD5BM',
+ 'rate': u'5',
+ 'text': u'Great material, sized to fit those with shorter torsos, and a tremendous buy!',
+ 'time': u'November 25, 2015',
+ 'user': u'A2Q2J1E7U8Z5OS'}
+2015-12-02 12:54:56 [scrapy] WARNING: Dropped: Missing price in {'item': u'B00CDJD5BM',
+ 'rate': u'5',
+ 'text': u'Good fit!',
+ 'time': u'November 25, 2015',
+ 'user': u'AEYLEGSVCGIJP'}
+{'item': u'B00CDJD5BM',
+ 'rate': u'5',
+ 'text': u'Good fit!',
+ 'time': u'November 25, 2015',
+ 'user': u'AEYLEGSVCGIJP'}
+2015-12-02 12:54:56 [scrapy] INFO: Crawled 53 pages (at 53 pages/min), scraped 0 items (at 0 items/min)
+2015-12-02 12:54:56 [scrapy] DEBUG: Crawled (200) <GET http://www.amazon.com/Calvin-Klein-Short-Sleeve-Digital/product-reviews/B016OY12VQ/ref=cm_cr_dp_see_all_btm?ie=UTF8&showViewpoints=1&sortBy=bySubmissionDateDescending> (referer: http://www.amazon.com/Calvin-Klein-Short-Sleeve-Digital/dp/B016OY1YWI/ref=sr_1_20/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-20&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER)
+2015-12-02 12:54:56 [review] ERROR: Come in
+2015-12-02 12:54:56 [review] ERROR: reviews num :1
+2015-12-02 12:54:56 [review] ERROR: {'item': u'B016OY1YWI', 'rate': u'3', 'time': u'November 30, 2015', 'user': u'A1ESY2M40IB6DQ', 'text': u'the t shirt its slim fit and This did not explain in the item description .'}
+2015-12-02 12:54:56 [scrapy] DEBUG: Crawled (200) <GET http://www.amazon.com/Fred-Perry-T-Shirt-Green-Medium/dp/B014HON25O/ref=sr_1_6/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-6&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER> (referer: http://www.amazon.com/s/ref=sr_pg_1?rh=n%3A7141123011%2Cn%3A7147441011%2Cn%3A1040658%2Cn%3A2476517011%2Cn%3A1045624%2Cp_6%3AATVPDKIKX0DER&page=1&bbn=2476517011&ie=UTF8&qid=1448965490)
+2015-12-02 12:54:56 [scrapy] WARNING: Dropped: Missing price in {'item': u'B016OY1YWI',
+ 'rate': u'3',
+ 'text': u'the t shirt its slim fit and This did not explain in the item description .',
+ 'time': u'November 30, 2015',
+ 'user': u'A1ESY2M40IB6DQ'}
+{'item': u'B016OY1YWI',
+ 'rate': u'3',
+ 'text': u'the t shirt its slim fit and This did not explain in the item description .',
+ 'time': u'November 30, 2015',
+ 'user': u'A1ESY2M40IB6DQ'}
+2015-12-02 12:54:56 [scrapy] DEBUG: Crawled (200) <GET http://www.amazon.com/Calvin-Klein-Sleeve-Printed-Jersey/dp/B016OY9AQU/ref=sr_1_9/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-9&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER> (referer: http://www.amazon.com/s/ref=sr_pg_1?rh=n%3A7141123011%2Cn%3A7147441011%2Cn%3A1040658%2Cn%3A2476517011%2Cn%3A1045624%2Cp_6%3AATVPDKIKX0DER&page=1&bbn=2476517011&ie=UTF8&qid=1448965490)
+2015-12-02 12:54:57 [scrapy] DEBUG: Crawled (200) <GET http://www.amazon.com/Calvin-Klein-Short-Sleeve-Abstract/dp/B016OY90II/ref=sr_1_5/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-5&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER> (referer: http://www.amazon.com/s/ref=sr_pg_1?rh=n%3A7141123011%2Cn%3A7147441011%2Cn%3A1040658%2Cn%3A2476517011%2Cn%3A1045624%2Cp_6%3AATVPDKIKX0DER&page=1&bbn=2476517011&ie=UTF8&qid=1448965490)
+2015-12-02 12:54:57 [scrapy] DEBUG: Crawled (200) <GET http://www.amazon.com/Armani-Jeans-Mens-Sample-Medium/dp/B012EJNYDO/ref=sr_1_3/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-3&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER> (referer: http://www.amazon.com/s/ref=sr_pg_1?rh=n%3A7141123011%2Cn%3A7147441011%2Cn%3A1040658%2Cn%3A2476517011%2Cn%3A1045624%2Cp_6%3AATVPDKIKX0DER&page=1&bbn=2476517011&ie=UTF8&qid=1448965490)
+2015-12-02 12:54:57 [scrapy] DEBUG: Crawled (200) <GET http://www.amazon.com/Carhartt-Workwear-T-Shirt-Original-Charcoal/dp/B000G73O9Q/ref=sr_1_8/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-8&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER> (referer: http://www.amazon.com/s/ref=sr_pg_1?rh=n%3A7141123011%2Cn%3A7147441011%2Cn%3A1040658%2Cn%3A2476517011%2Cn%3A1045624%2Cp_6%3AATVPDKIKX0DER&page=1&bbn=2476517011&ie=UTF8&qid=1448965490)
+2015-12-02 12:55:00 [scrapy] ERROR: Spider error processing <GET http://www.amazon.com/Carhartt-Workwear-T-Shirt-Original-Charcoal/dp/B000G73O9Q/ref=sr_1_8/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-8&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER> (referer: http://www.amazon.com/s/ref=sr_pg_1?rh=n%3A7141123011%2Cn%3A7147441011%2Cn%3A1040658%2Cn%3A2476517011%2Cn%3A1045624%2Cp_6%3AATVPDKIKX0DER&page=1&bbn=2476517011&ie=UTF8&qid=1448965490)
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/spidermiddlewares/offsite.py", line 28, in process_spider_output
+    for x in result:
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/spidermiddlewares/depth.py", line 54, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/home/tao/Documents/amazon/amazon/spiders/review_spider.py", line 39, in parse_item_page
+    this_review_url_sel = Selector(response.read())
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/selector/unified.py", line 80, in __init__
+    _root = LxmlDocument(response, self._parser)
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/selector/lxmldocument.py", line 24, in __new__
+    cache = cls.cache.setdefault(response, {})
+  File "/usr/lib/python2.7/weakref.py", line 369, in setdefault
+    return self.data.setdefault(ref(key, self._remove),default)
+TypeError: cannot create weak reference to 'str' object
+2015-12-02 12:55:00 [scrapy] DEBUG: Crawled (200) <GET http://www.amazon.com/True-Religion-Linear-Optic-Medium/dp/B0156N156I/ref=sr_1_7/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-7&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER> (referer: http://www.amazon.com/s/ref=sr_pg_1?rh=n%3A7141123011%2Cn%3A7147441011%2Cn%3A1040658%2Cn%3A2476517011%2Cn%3A1045624%2Cp_6%3AATVPDKIKX0DER&page=1&bbn=2476517011&ie=UTF8&qid=1448965490)
+2015-12-02 12:55:00 [scrapy] DEBUG: Crawled (200) <GET http://www.amazon.com/John-Varvatos-Short-Sleeve-Crew-Neck-T-Shirt/dp/B012F24OGG/ref=sr_1_4/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-4&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER> (referer: http://www.amazon.com/s/ref=sr_pg_1?rh=n%3A7141123011%2Cn%3A7147441011%2Cn%3A1040658%2Cn%3A2476517011%2Cn%3A1045624%2Cp_6%3AATVPDKIKX0DER&page=1&bbn=2476517011&ie=UTF8&qid=1448965490)
+2015-12-02 12:55:00 [scrapy] DEBUG: Crawled (200) <GET http://www.amazon.com/Carhartt-Workwear-Midweight-Original-Charcoal/dp/B000UJC2GG/ref=sr_1_2/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-2&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER> (referer: http://www.amazon.com/s/ref=sr_pg_1?rh=n%3A7141123011%2Cn%3A7147441011%2Cn%3A1040658%2Cn%3A2476517011%2Cn%3A1045624%2Cp_6%3AATVPDKIKX0DER&page=1&bbn=2476517011&ie=UTF8&qid=1448965490)
+2015-12-02 12:55:04 [scrapy] ERROR: Spider error processing <GET http://www.amazon.com/Carhartt-Workwear-Midweight-Original-Charcoal/dp/B000UJC2GG/ref=sr_1_2/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-2&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER> (referer: http://www.amazon.com/s/ref=sr_pg_1?rh=n%3A7141123011%2Cn%3A7147441011%2Cn%3A1040658%2Cn%3A2476517011%2Cn%3A1045624%2Cp_6%3AATVPDKIKX0DER&page=1&bbn=2476517011&ie=UTF8&qid=1448965490)
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/spidermiddlewares/offsite.py", line 28, in process_spider_output
+    for x in result:
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/spidermiddlewares/depth.py", line 54, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/home/tao/Documents/amazon/amazon/spiders/review_spider.py", line 39, in parse_item_page
+    this_review_url_sel = Selector(response.read())
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/selector/unified.py", line 80, in __init__
+    _root = LxmlDocument(response, self._parser)
+  File "/usr/local/lib/python2.7/dist-packages/Scrapy-1.0.3-py2.7.egg/scrapy/selector/lxmldocument.py", line 24, in __new__
+    cache = cls.cache.setdefault(response, {})
+  File "/usr/lib/python2.7/weakref.py", line 369, in setdefault
+    return self.data.setdefault(ref(key, self._remove),default)
+TypeError: cannot create weak reference to 'str' object
+2015-12-02 12:55:04 [scrapy] DEBUG: Crawled (200) <GET http://www.amazon.com/Carhartt-Workwear-Midweight-Long-Sleeve-T-Shirt/product-reviews/B002G9U8VE/ref=cm_cr_dp_see_all_btm?ie=UTF8&showViewpoints=1&sortBy=bySubmissionDateDescending> (referer: http://www.amazon.com/Carhartt-Workwear-Midweight-Original-Charcoal/dp/B000UJC2GG/ref=sr_1_2/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-2&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER)
+2015-12-02 12:55:04 [scrapy] DEBUG: Crawled (200) <GET http://www.amazon.com/Carhartt-Workwear-T-Shirt-Original-K87/product-reviews/B002G9UDKU/ref=cm_cr_dp_see_all_btm?ie=UTF8&showViewpoints=1&sortBy=bySubmissionDateDescending> (referer: http://www.amazon.com/Carhartt-Workwear-T-Shirt-Original-Charcoal/dp/B000G73O9Q/ref=sr_1_8/190-8436702-2081014?m=ATVPDKIKX0DER&s=apparel&ie=UTF8&qid=1449032037&sr=1-8&nodeID=1045624&refinements=p_6%3AATVPDKIKX0DER)
+2015-12-02 12:55:04 [review] ERROR: Come in
+2015-12-02 12:55:04 [review] ERROR: reviews num :10
+2015-12-02 12:55:04 [review] ERROR: {'item': u'B000UJC2GG', 'rate': u'5', 'time': u'December 1, 2015', 'user': u'A104M7RMXOOMLA', 'text': u'Fits large at first, buts shrinks to a size complementary to what t says on the tag.'}
+2015-12-02 12:55:04 [review] ERROR: {'item': u'B000UJC2GG', 'rate': u'5', 'time': u'November 30, 2015', 'user': u'A1AVW1DKNC0QYC', 'text': u'Good quality shirt!'}
+2015-12-02 12:55:04 [review] ERROR: {'item': u'B000UJC2GG', 'rate': u'3', 'time': u'November 30, 2015', 'user': u'A20EBW90IHG3NW', 'text': u'Quality is so good but the size is way too large'}
+2015-12-02 12:55:04 [review] ERROR: {'item': u'B000UJC2GG', 'rate': u'5', 'time': u'November 29, 2015', 'user': u'A9DGCSIA65IE6', 'text': u'Great product!'}
+2015-12-02 12:55:04 [review] ERROR: {'item': u'B000UJC2GG', 'rate': u'1', 'time': u'November 28, 2015', 'user': u'AS7LVV69WSIGR', 'text': u'Pocket ripped upon arrival, I bought up a size because of the reviews stating the jackets ran small... Should have bought up 2 sizes. One of the buttons came off after 15 minutes of wearing it'}
+2015-12-02 12:55:04 [review] ERROR: {'item': u'B000UJC2GG', 'rate': u'5', 'time': u'November 28, 2015', 'user': u'A2O0WXLOAWK0HH', 'text': u'Great fit great price'}
+2015-12-02 12:55:04 [review] ERROR: {'item': u'B000UJC2GG', 'rate': u'5', 'time': u'November 28, 2015', 'user': u'A258GE7BW4ZPV', 'text': u'I got the shirt and put it on and it was like wearing a poncho. Now, I was able to shrink the shirt after a wash or 2 and now it fits nicely.'}
+2015-12-02 12:55:04 [review] ERROR: {'item': u'B000UJC2GG', 'rate': u'5', 'time': u'November 27, 2015', 'user': u'A1VQGKNLXQGYTV', 'text': u'Great long-sleeved shirt!'}
+2015-12-02 12:55:04 [review] ERROR: {'item': u'B000UJC2GG', 'rate': u'5', 'time': u'November 27, 2015', 'user': u'AG1BPE2VX7RTH', 'text': u'This is one more Carhartt shirts that I enjoy wearing.'}
+2015-12-02 12:55:04 [review] ERROR: {'item': u'B000UJC2GG', 'rate': u'5', 'time': u'November 27, 2015', 'user': u'A3UUIH6VOLVQDP', 'text': u'great'}
+2015-12-02 12:55:04 [review] ERROR: Come in
+2015-12-02 12:55:04 [review] ERROR: reviews num :10
+2015-12-02 12:55:04 [review] ERROR: {'item': u'B000G73O9Q', 'rate': u'5', 'time': u'December 1, 2015', 'user': u'A19KR1KK3KFFX9', 'text': u'Perfect'}
+2015-12-02 12:55:04 [review] ERROR: {'item': u'B000G73O9Q', 'rate': u'5', 'time': u'December 1, 2015', 'user': u'A2OFZ0PA2H7PHQ', 'text': u"Love the quality of these shirts, but they aren't as long as I had hoped.  I purchased SEVERAL of these shirts for my husband who is a General Contractor who can never keep his shirts tucked in.  He's not super tall either, he's right at 6' but has a longer torso and I was hoping these shirts would be significantly longer than normal but they aren't.  But on the other hand, the quality is SUPERIOR!!!"}
+2015-12-02 12:55:04 [review] ERROR: {'item': u'B000G73O9Q', 'rate': u'5', 'time': u'December 1, 2015', 'user': u'A2HVKSIX1DABFC', 'text': u'Really like this shirts, they are heavy duty, the neck stays tight, and the pocket is a feature that I want.'}
+2015-12-02 12:55:04 [review] ERROR: {'item': u'B000G73O9Q', 'rate': u'5', 'time': u'November 30, 2015', 'user': u'A13AYKY9H5MW2T', 'text': u'What a great Shirt! Heavy weight thick cotton material.  Feels extremely durable (and a hair stiffer than a normal T-shirt).  Stitching heavyweight.  Pocket placement and size are as expected.  I own 4 of these in various colors (bought two initially, then two more since I was so impressed).  One of the few easy options for Tall sizes.'}
+2015-12-02 12:55:04 [review] ERROR: {'item': u'B000G73O9Q', 'rate': u'5', 'time': u'November 30, 2015', 'user': u'A1F3T0OJHZHYL', 'text': u'Husband loves these shirts!  Excellent quality, holds up better then any other tshirt available.  Little pricey but worth it.'}
+2015-12-02 12:55:04 [review] ERROR: {'item': u'B000G73O9Q', 'rate': u'5', 'time': u'November 30, 2015', 'user': u'AEJO3L307AEN0', 'text': u'Hubby loved them! It has become one of his favorites!'}
+2015-12-02 12:55:04 [review] ERROR: {'item': u'B000G73O9Q', 'rate': u'4', 'time': u'November 29, 2015', 'user': u'A38KK4LTT08ILZ', 'text': u'I thought these were made in the USA, these are made in Honduras. All of my other Carhartt gear is made in the USA. Not real happy with that.'}
+2015-12-02 12:55:04 [review] ERROR: {'item': u'B000G73O9Q', 'rate': u'5', 'time': u'November 28, 2015', 'user': u'A1CR83N7UG51M3', 'text': u'This is the best fitting T-shirt I have ever bought!'}
+2015-12-02 12:55:04 [review] ERROR: {'item': u'B000G73O9Q', 'rate': u'4', 'time': u'November 26, 2015', 'user': u'ABK7P654Y3GP6', 'text': u'Fit as expected'}
+2015-12-02 12:55:04 [review] ERROR: {'item': u'B000G73O9Q', 'rate': u'5', 'time': u'November 26, 2015', 'user': u'A36SG0XRKK81SE', 'text': u'Husband loved it!!'}
+2015-12-02 12:55:04 [scrapy] WARNING: Dropped: Missing price in {'item': u'B000UJC2GG',
+ 'rate': u'5',
+ 'text': u'Fits large at first, buts shrinks to a size complementary to what t says on the tag.',
+ 'time': u'December 1, 2015',
+ 'user': u'A104M7RMXOOMLA'}
+{'item': u'B000UJC2GG',
+ 'rate': u'5',
+ 'text': u'Fits large at first, buts shrinks to a size complementary to what t says on the tag.',
+ 'time': u'December 1, 2015',
+ 'user': u'A104M7RMXOOMLA'}
+2015-12-02 12:55:04 [scrapy] WARNING: Dropped: Missing price in {'item': u'B000UJC2GG',
+ 'rate': u'5',
+ 'text': u'Good quality shirt!',
+ 'time': u'November 30, 2015',
+ 'user': u'A1AVW1DKNC0QYC'}
+{'item': u'B000UJC2GG',
+ 'rate': u'5',
+ 'text': u'Good quality shirt!',
+ 'time': u'November 30, 2015',
+ 'user': u'A1AVW1DKNC0QYC'}
+2015-12-02 12:55:04 [scrapy] WARNING: Dropped: Missing price in {'item': u'B000UJC2GG',
+ 'rate': u'3',
+ 'text': u'Quality is so good but the size is way too large',
+ 'time': u'November 30, 2015',
+ 'user': u'A20EBW90IHG3NW'}
+{'item': u'B000UJC2GG',
+ 'rate': u'3',
+ 'text': u'Quality is so good but the size is way too large',
+ 'time': u'November 30, 2015',
+ 'user': u'A20EBW90IHG3NW'}
+2015-12-02 12:55:04 [scrapy] WARNING: Dropped: Missing price in {'item': u'B000UJC2GG',
+ 'rate': u'5',
+ 'text': u'Great product!',
+ 'time': u'November 29, 2015',
+ 'user': u'A9DGCSIA65IE6'}
+{'item': u'B000UJC2GG',
+ 'rate': u'5',
+ 'text': u'Great product!',
+ 'time': u'November 29, 2015',
+ 'user': u'A9DGCSIA65IE6'}
+2015-12-02 12:55:04 [scrapy] WARNING: Dropped: Missing price in {'item': u'B000UJC2GG',
+ 'rate': u'1',
+ 'text': u'Pocket ripped upon arrival, I bought up a size because of the reviews stating the jackets ran small... Should have bought up 2 sizes. One of the buttons came off after 15 minutes of wearing it',
+ 'time': u'November 28, 2015',
+ 'user': u'AS7LVV69WSIGR'}
+{'item': u'B000UJC2GG',
+ 'rate': u'1',
+ 'text': u'Pocket ripped upon arrival, I bought up a size because of the reviews stating the jackets ran small... Should have bought up 2 sizes. One of the buttons came off after 15 minutes of wearing it',
+ 'time': u'November 28, 2015',
+ 'user': u'AS7LVV69WSIGR'}
+2015-12-02 12:55:04 [scrapy] WARNING: Dropped: Missing price in {'item': u'B000UJC2GG',
+ 'rate': u'5',
+ 'text': u'Great fit great price',
+ 'time': u'November 28, 2015',
+ 'user': u'A2O0WXLOAWK0HH'}
+{'item': u'B000UJC2GG',
+ 'rate': u'5',
+ 'text': u'Great fit great price',
+ 'time': u'November 28, 2015',
+ 'user': u'A2O0WXLOAWK0HH'}
+2015-12-02 12:55:04 [scrapy] WARNING: Dropped: Missing price in {'item': u'B000UJC2GG',
+ 'rate': u'5',
+ 'text': u'I got the shirt and put it on and it was like wearing a poncho. Now, I was able to shrink the shirt after a wash or 2 and now it fits nicely.',
+ 'time': u'November 28, 2015',
+ 'user': u'A258GE7BW4ZPV'}
+{'item': u'B000UJC2GG',
+ 'rate': u'5',
+ 'text': u'I got the shirt and put it on and it was like wearing a poncho. Now, I was able to shrink the shirt after a wash or 2 and now it fits nicely.',
+ 'time': u'November 28, 2015',
+ 'user': u'A258GE7BW4ZPV'}
+2015-12-02 12:55:04 [scrapy] WARNING: Dropped: Missing price in {'item': u'B000UJC2GG',
+ 'rate': u'5',
+ 'text': u'Great long-sleeved shirt!',
+ 'time': u'November 27, 2015',
+ 'user': u'A1VQGKNLXQGYTV'}
+{'item': u'B000UJC2GG',
+ 'rate': u'5',
+ 'text': u'Great long-sleeved shirt!',
+ 'time': u'November 27, 2015',
+ 'user': u'A1VQGKNLXQGYTV'}
+2015-12-02 12:55:04 [scrapy] WARNING: Dropped: Missing price in {'item': u'B000UJC2GG',
+ 'rate': u'5',
+ 'text': u'This is one more Carhartt shirts that I enjoy wearing.',
+ 'time': u'November 27, 2015',
+ 'user': u'AG1BPE2VX7RTH'}
+{'item': u'B000UJC2GG',
+ 'rate': u'5',
+ 'text': u'This is one more Carhartt shirts that I enjoy wearing.',
+ 'time': u'November 27, 2015',
+ 'user': u'AG1BPE2VX7RTH'}
+2015-12-02 12:55:04 [scrapy] WARNING: Dropped: Missing price in {'item': u'B000UJC2GG',
+ 'rate': u'5',
+ 'text': u'great',
+ 'time': u'November 27, 2015',
+ 'user': u'A3UUIH6VOLVQDP'}
+{'item': u'B000UJC2GG',
+ 'rate': u'5',
+ 'text': u'great',
+ 'time': u'November 27, 2015',
+ 'user': u'A3UUIH6VOLVQDP'}
+2015-12-02 12:55:04 [scrapy] WARNING: Dropped: Missing price in {'item': u'B000G73O9Q',
+ 'rate': u'5',
+ 'text': u'Perfect',
+ 'time': u'December 1, 2015',
+ 'user': u'A19KR1KK3KFFX9'}
+{'item': u'B000G73O9Q',
+ 'rate': u'5',
+ 'text': u'Perfect',
+ 'time': u'December 1, 2015',
+ 'user': u'A19KR1KK3KFFX9'}
+2015-12-02 12:55:04 [scrapy] WARNING: Dropped: Missing price in {'item': u'B000G73O9Q',
+ 'rate': u'5',
+ 'text': u"Love the quality of these shirts, but they aren't as long as I had hoped.  I purchased SEVERAL of these shirts for my husband who is a General Contractor who can never keep his shirts tucked in.  He's not super tall either, he's right at 6' but has a longer torso and I was hoping these shirts would be significantly longer than normal but they aren't.  But on the other hand, the quality is SUPERIOR!!!",
+ 'time': u'December 1, 2015',
+ 'user': u'A2OFZ0PA2H7PHQ'}
+{'item': u'B000G73O9Q',
+ 'rate': u'5',
+ 'text': u"Love the quality of these shirts, but they aren't as long as I had hoped.  I purchased SEVERAL of these shirts for my husband who is a General Contractor who can never keep his shirts tucked in.  He's not super tall either, he's right at 6' but has a longer torso and I was hoping these shirts would be significantly longer than normal but they aren't.  But on the other hand, the quality is SUPERIOR!!!",
+ 'time': u'December 1, 2015',
+ 'user': u'A2OFZ0PA2H7PHQ'}
+2015-12-02 12:55:04 [scrapy] WARNING: Dropped: Missing price in {'item': u'B000G73O9Q',
+ 'rate': u'5',
+ 'text': u'Really like this shirts, they are heavy duty, the neck stays tight, and the pocket is a feature that I want.',
+ 'time': u'December 1, 2015',
+ 'user': u'A2HVKSIX1DABFC'}
+{'item': u'B000G73O9Q',
+ 'rate': u'5',
+ 'text': u'Really like this shirts, they are heavy duty, the neck stays tight, and the pocket is a feature that I want.',
+ 'time': u'December 1, 2015',
+ 'user': u'A2HVKSIX1DABFC'}
+2015-12-02 12:55:04 [scrapy] WARNING: Dropped: Missing price in {'item': u'B000G73O9Q',
+ 'rate': u'5',
+ 'text': u'What a great Shirt! Heavy weight thick cotton material.  Feels extremely durable (and a hair stiffer than a normal T-shirt).  Stitching heavyweight.  Pocket placement and size are as expected.  I own 4 of these in various colors (bought two initially, then two more since I was so impressed).  One of the few easy options for Tall sizes.',
+ 'time': u'November 30, 2015',
+ 'user': u'A13AYKY9H5MW2T'}
+{'item': u'B000G73O9Q',
+ 'rate': u'5',
+ 'text': u'What a great Shirt! Heavy weight thick cotton material.  Feels extremely durable (and a hair stiffer than a normal T-shirt).  Stitching heavyweight.  Pocket placement and size are as expected.  I own 4 of these in various colors (bought two initially, then two more since I was so impressed).  One of the few easy options for Tall sizes.',
+ 'time': u'November 30, 2015',
+ 'user': u'A13AYKY9H5MW2T'}
+2015-12-02 12:55:04 [scrapy] WARNING: Dropped: Missing price in {'item': u'B000G73O9Q',
+ 'rate': u'5',
+ 'text': u'Husband loves these shirts!  Excellent quality, holds up better then any other tshirt available.  Little pricey but worth it.',
+ 'time': u'November 30, 2015',
+ 'user': u'A1F3T0OJHZHYL'}
+{'item': u'B000G73O9Q',
+ 'rate': u'5',
+ 'text': u'Husband loves these shirts!  Excellent quality, holds up better then any other tshirt available.  Little pricey but worth it.',
+ 'time': u'November 30, 2015',
+ 'user': u'A1F3T0OJHZHYL'}
+2015-12-02 12:55:04 [scrapy] WARNING: Dropped: Missing price in {'item': u'B000G73O9Q',
+ 'rate': u'5',
+ 'text': u'Hubby loved them! It has become one of his favorites!',
+ 'time': u'November 30, 2015',
+ 'user': u'AEJO3L307AEN0'}
+{'item': u'B000G73O9Q',
+ 'rate': u'5',
+ 'text': u'Hubby loved them! It has become one of his favorites!',
+ 'time': u'November 30, 2015',
+ 'user': u'AEJO3L307AEN0'}
+2015-12-02 12:55:04 [scrapy] WARNING: Dropped: Missing price in {'item': u'B000G73O9Q',
+ 'rate': u'4',
+ 'text': u'I thought these were made in the USA, these are made in Honduras. All of my other Carhartt gear is made in the USA. Not real happy with that.',
+ 'time': u'November 29, 2015',
+ 'user': u'A38KK4LTT08ILZ'}
+{'item': u'B000G73O9Q',
+ 'rate': u'4',
+ 'text': u'I thought these were made in the USA, these are made in Honduras. All of my other Carhartt gear is made in the USA. Not real happy with that.',
+ 'time': u'November 29, 2015',
+ 'user': u'A38KK4LTT08ILZ'}
+2015-12-02 12:55:04 [scrapy] WARNING: Dropped: Missing price in {'item': u'B000G73O9Q',
+ 'rate': u'5',
+ 'text': u'This is the best fitting T-shirt I have ever bought!',
+ 'time': u'November 28, 2015',
+ 'user': u'A1CR83N7UG51M3'}
+{'item': u'B000G73O9Q',
+ 'rate': u'5',
+ 'text': u'This is the best fitting T-shirt I have ever bought!',
+ 'time': u'November 28, 2015',
+ 'user': u'A1CR83N7UG51M3'}
+2015-12-02 12:55:04 [scrapy] WARNING: Dropped: Missing price in {'item': u'B000G73O9Q',
+ 'rate': u'4',
+ 'text': u'Fit as expected',
+ 'time': u'November 26, 2015',
+ 'user': u'ABK7P654Y3GP6'}
+{'item': u'B000G73O9Q',
+ 'rate': u'4',
+ 'text': u'Fit as expected',
+ 'time': u'November 26, 2015',
+ 'user': u'ABK7P654Y3GP6'}
+2015-12-02 12:55:04 [scrapy] WARNING: Dropped: Missing price in {'item': u'B000G73O9Q',
+ 'rate': u'5',
+ 'text': u'Husband loved it!!',
+ 'time': u'November 26, 2015',
+ 'user': u'A36SG0XRKK81SE'}
+{'item': u'B000G73O9Q',
+ 'rate': u'5',
+ 'text': u'Husband loved it!!',
+ 'time': u'November 26, 2015',
+ 'user': u'A36SG0XRKK81SE'}
+2015-12-02 12:55:04 [scrapy] INFO: Closing spider (finished)
+2015-12-02 12:55:04 [scrapy] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 63157,
+ 'downloader/request_count': 64,
+ 'downloader/request_method_count/GET': 64,
+ 'downloader/response_bytes': 5657920,
+ 'downloader/response_count': 64,
+ 'downloader/response_status_count/200': 64,
+ 'dupefilter/filtered': 33,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2015, 12, 2, 4, 55, 4, 242769),
+ 'item_dropped_count': 117,
+ 'item_dropped_reasons_count/DropItem': 117,
+ 'log_count/DEBUG': 66,
+ 'log_count/ERROR': 162,
+ 'log_count/INFO': 8,
+ 'log_count/WARNING': 117,
+ 'request_depth_max': 2,
+ 'response_received_count': 64,
+ 'scheduler/dequeued': 64,
+ 'scheduler/dequeued/memory': 64,
+ 'scheduler/enqueued': 64,
+ 'scheduler/enqueued/memory': 64,
+ 'spider_exceptions/HTTPError': 1,
+ 'spider_exceptions/TypeError': 14,
+ 'start_time': datetime.datetime(2015, 12, 2, 4, 53, 56, 511079)}
+2015-12-02 12:55:04 [scrapy] INFO: Spider closed (finished)

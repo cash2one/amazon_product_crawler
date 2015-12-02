@@ -1,0 +1,6 @@
+from scrapy import Item, Field
+ 
+ 
+class PadItem(Item):
+    sno = Field()
+    price = Field()
