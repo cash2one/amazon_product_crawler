@@ -12,7 +12,7 @@ class ReviewSpider(Spider):
     u1 = 'http://www.amazon.com/s/ref=sr_pg_'
     u2 = '?rh=n%3A7141123011%2Cn%3A7147441011%2Cn%3A1040658%2Cn%3A2476517011%2Cn%3A1045624%2Cp_6%3AATVPDKIKX0DER&page='
     u3 = '&bbn=2476517011&ie=UTF8&qid=1448965490'
-    for i in range(1):
+    for i in range(119):
         url = u1 + str(i+1) + u2 + str(i+1) + u3
         start_urls.append(url)
  
@@ -36,7 +36,7 @@ class ReviewSpider(Spider):
             while True:
                 yield Request(url=this_review_url, meta={'item': item}, callback=self.parse_review_content_page)
                 response = urllib2.urlopen(this_review_url)
-                this_review_url_sel = Selector(response.read())
+                this_review_url_sel = Selector(text=response.read())
                 next_review_urls = this_review_url_sel.xpath('//li[@class="a-last"]/a/@href').extract()
                 if next_review_urls:
                     this_review_url = next_review_urls[0]

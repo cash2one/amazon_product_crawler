@@ -1,0 +1,7 @@
+*.pyc
+*.log
+*~
+*.xml
+*.jl
+*.old
+nohup.out
