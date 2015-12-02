@@ -3,7 +3,7 @@ from scrapy import Spider, Selector
 from scrapy.http import Request
 from amazon.items import ReviewItem
 import requests
- 
+
 class ReviewSpider(Spider):
     name = "review"
     allowed_domains = ["amazon.com"]
@@ -13,13 +13,14 @@ class ReviewSpider(Spider):
     u1 = 'http://www.amazon.com/s/ref=sr_pg_'
     u2 = '?rh=n%3A7141123011%2Cn%3A7147441011%2Cn%3A1040658%2Cn%3A2476517011%2Cn%3A1045624%2Cp_6%3AATVPDKIKX0DER&page='#?rh=n%3A7141123011%2Cn%3A7147441011%2Cn%3A1040658%2Cn%3A2476517011%2Cn%3A1045624%2Cp_6%3AATVPDKIKX0DER&page='
     u3 = '&bbn=2476517011&ie=UTF8&qid=1449046264'#&bbn=2476517011&ie=UTF8&qid=1448965490'
-    for i in range(1):
+    for i in range(119):
         url = u1 + str(i+1) + u2 + str(i+1) + u3
         start_urls.append(url)
- 
+
+    self.logger.info(start_urls)
     def parse(self, response):
 	self.logger.debug('response url :' + response.url)
-	self.logger.debug('response body :' + response.body)
+	#self.logger.debug('response body :' + response.body)
         sel = Selector(response)
         sites = sel.xpath('//li[@class="s-result-item  celwidget "]')
         self.logger.debug('product num: ' + str(len(sites)))
