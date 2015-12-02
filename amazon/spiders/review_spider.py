@@ -18,6 +18,8 @@ class ReviewSpider(Spider):
         start_urls.append(url)
  
     def parse(self, response):
+	self.logger.debug('response url :' + response.url)
+	self.logger.debug('response body :' + response.body)
         sel = Selector(response)
         sites = sel.xpath('//li[@class="s-result-item  celwidget "]')
         self.logger.debug('product num: ' + str(len(sites)))
