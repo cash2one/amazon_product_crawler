@@ -2,23 +2,25 @@
 from scrapy import Spider, Selector
 from scrapy.http import Request
 from amazon.items import ReviewItem
-import urllib2
+import requests
  
 class ReviewSpider(Spider):
     name = "review"
     allowed_domains = ["amazon.com"]
  
     start_urls = []
+#http://www.amazon.com/s/ref=sr_pg_2?rh=n%3A7141123011%2Cn%3A7147441011%2Cn%3A1040658%2Cn%3A2476517011%2Cn%3A1045624%2Cp_6%3AATVPDKIKX0DER&page=2&bbn=2476517011&ie=UTF8&qid=1449046264
     u1 = 'http://www.amazon.com/s/ref=sr_pg_'
-    u2 = '?rh=n%3A7141123011%2Cn%3A7147441011%2Cn%3A1040658%2Cn%3A2476517011%2Cn%3A1045624%2Cp_6%3AATVPDKIKX0DER&page='
-    u3 = '&bbn=2476517011&ie=UTF8&qid=1448965490'
-    for i in range(119):
+    u2 = '?rh=n%3A7141123011%2Cn%3A7147441011%2Cn%3A1040658%2Cn%3A2476517011%2Cn%3A1045624%2Cp_6%3AATVPDKIKX0DER&page='#?rh=n%3A7141123011%2Cn%3A7147441011%2Cn%3A1040658%2Cn%3A2476517011%2Cn%3A1045624%2Cp_6%3AATVPDKIKX0DER&page='
+    u3 = '&bbn=2476517011&ie=UTF8&qid=1449046264'#&bbn=2476517011&ie=UTF8&qid=1448965490'
+    for i in range(1):
         url = u1 + str(i+1) + u2 + str(i+1) + u3
         start_urls.append(url)
  
     def parse(self, response):
         sel = Selector(response)
         sites = sel.xpath('//li[@class="s-result-item  celwidget "]')
+        self.logger.debug('product num: ' + str(len(sites)))
         for site in sites:
             item = ReviewItem()
             item['item'] = site.xpath('@data-asin').extract()[0]
@@ -30,16 +32,23 @@ class ReviewSpider(Spider):
         item = response.meta['item']
 
         review_urls = sel.xpath('//a[@class="a-link-emphasis a-text-bold"]/@href').extract()
+        self.logger.debug('if this product has review: ' + str(len(review_urls)))
         if review_urls:
             this_review_url = review_urls[0]
+            ix = 0
 
             while True:
                 yield Request(url=this_review_url, meta={'item': item}, callback=self.parse_review_content_page)
-                response = urllib2.urlopen(this_review_url)
-                this_review_url_sel = Selector(text=response.read())
+                response = requests.get(this_review_url)
+                this_review_url_sel = Selector(text=response.text)
                 next_review_urls = this_review_url_sel.xpath('//li[@class="a-last"]/a/@href').extract()
+                self.logger.debug('next_review_urls :'.join(next_review_urls))
                 if next_review_urls:
                     this_review_url = next_review_urls[0]
+                    this_review_url = 'http://www.amazon.com' + this_review_url
+                    self.logger.debug(this_review_url)
+                    ix += 1
+                    self.logger.debug(ix)
                 else:
                     break
         else:
