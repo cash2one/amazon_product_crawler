@@ -26,5 +26,6 @@ LOG_STDOUT = True
 
 ITEM_PIPELINES = {
     'amazon.pipelines.EmptyItemPipeline': 300,
+    'amazon.pipelines.RepeatedItemPipeline': 500
     #'amazon.pipelines.JsonWriterPipeline': 1000
 }

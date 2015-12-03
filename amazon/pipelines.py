@@ -1,6 +1,9 @@
 from scrapy.exceptions import DropItem
 import json
 
+with open('review.jl', 'r') as json_file:
+	json_data = json.load(json_file)
+
 class EmptyItemPipeline(object):
 
     def process_item(self, item, spider):
@@ -10,12 +13,10 @@ class EmptyItemPipeline(object):
             return item
 
 
-class JsonWriterPipeline(object):
-
-    def __init__(self):
-        self.file = open('items.jl', 'wb')
-
-    def process_item(self, item, spider):
-        line = json.dumps(dict(item)) + "\n"
-        self.file.write(line)
-        return item
+class RepeatedItemPipeline(object):
+    	def process_item(self, item, spider):
+		data = dict(item)
+        	if data in json_data:
+            		raise DropItem("Missing value in %s" % item)
+        	else:
+            		return item
